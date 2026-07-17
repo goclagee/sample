@@ -51,6 +51,22 @@ b,strong{font-weight:700}
 .frame i:nth-child(3){bottom:-.35mm;left:-.35mm;border-bottom-width:.6mm;border-left-width:.6mm}
 .frame i:nth-child(4){bottom:-.35mm;right:-.35mm;border-bottom-width:.6mm;border-right-width:.6mm}
 
+/* ---------- layered background décor ---------- */
+.deco{
+  position:absolute;inset:5mm;z-index:0;pointer-events:none;
+  --dw1:rgba(29,106,102,.05);--dw2:rgba(195,154,43,.07);
+  --dct:rgba(20,70,76,.10);--dar:rgba(195,154,43,.18);
+}
+.dark .deco{
+  --dw1:rgba(237,243,241,.04);--dw2:rgba(195,154,43,.06);
+  --dct:rgba(237,243,241,.06);--dar:rgba(195,154,43,.22);
+}
+.page-body{z-index:1}
+.rail{z-index:2}
+.foot{z-index:2}
+.cover-grid{z-index:1}
+.s13-body{z-index:1}
+
 /* ---------- altimeter rail (deck position indicator) ---------- */
 .rail{
   position:absolute;left:5mm;top:5mm;bottom:5mm;width:11mm;
@@ -217,16 +233,31 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 
 /* ============================================================ 03 SOLUTIONS */
 .s3-cols{display:grid;grid-template-columns:1fr 88mm;gap:9mm;flex:1;min-height:0}
-.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.6mm;align-content:stretch}
-.sol{
-  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
-  padding:3.4mm 4mm;display:flex;align-items:center;gap:3.6mm;
+/* the solutions trail — a switchback ascent of 8 nodes */
+.trail{position:relative}
+.trail svg.under{position:absolute;inset:0;width:100%;height:100%}
+.tnod{
+  position:absolute;translate:-50% -50%;z-index:2;
+  width:12mm;height:12mm;border-radius:50%;padding:2.8mm;
+  display:flex;align-items:center;justify-content:center;color:#fff;background:var(--pine);
+  box-shadow:0 0 0 1.2mm var(--paper),0 0 0 1.6mm var(--line),0 .8mm 2.4mm rgba(12,46,49,.2);
 }
-.sol .tx{font-size:3.55mm;font-weight:700;letter-spacing:.01em}
-.sol .sub{display:block;font-size:2.6mm;font-weight:500;color:var(--mute);margin-top:.8mm;letter-spacing:.02em}
-.sol.dei{background:var(--ink);border-color:var(--ink)}
-.sol.dei .tx{color:var(--brass)}
-.sol.dei .sub{color:rgba(237,243,241,.7)}
+.tnod.em{background:var(--emerald)}
+.tnod.dei{
+  width:15mm;height:15mm;padding:3.4mm;background:var(--brass);color:var(--ink);
+  box-shadow:0 0 0 1.2mm var(--paper),0 0 0 1.8mm var(--brass),0 .8mm 2.4mm rgba(12,46,49,.25);
+}
+.tflag{position:absolute;translate:-50% -100%;width:6mm;height:6mm;color:var(--brasstxt);z-index:2}
+.tlab{position:absolute;z-index:2}
+.tlab .nm{font-size:3.3mm;font-weight:700;line-height:1.2}
+.tlab .sb{font-size:2.7mm;color:var(--mute);margin-top:.7mm;line-height:1.28}
+.tlab.L{text-align:right}
+.tlab .nm.gold{color:var(--brasstxt)}
+.trail .tcap{
+  position:absolute;left:0;top:5mm;width:42mm;z-index:2;
+  font-family:var(--serif);font-style:italic;font-size:4mm;line-height:1.45;color:var(--mute);
+}
+.trail .tcap b{font-family:var(--sans);font-style:normal;font-weight:800;color:var(--pine)}
 .fn-panel{
   background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:5mm 5.5mm;
   display:flex;flex-direction:column;
@@ -480,6 +511,20 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
     <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v5c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 11v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></symbol>
     <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 4.5c4-2 8 2 12 0V13c-4 2-8-2-12 0"/></symbol>
     <symbol id="i-arrowup" viewBox="0 0 24 24"><path d="M12 20V5M5.5 11.5 12 5l6.5 6.5"/></symbol>
+    <!-- layered page background: contour curves, washes, arcs -->
+    <symbol id="bg">
+      <path d="M297,0 L152,0 C185,52 236,88 297,104 Z" fill="var(--dw1)"/>
+      <path d="M0,200 L0,132 C52,150 96,178 150,200 Z" fill="var(--dw2)"/>
+      <g fill="none" stroke="var(--dct)" stroke-width=".6">
+        <path d="M-4,158 C48,128 108,186 168,138 C210,104 246,84 302,92"/>
+        <path d="M-4,172 C52,142 112,198 172,150 C214,116 250,96 302,104"/>
+        <path d="M-4,186 C56,156 116,210 176,162 C218,128 254,108 302,116"/>
+      </g>
+      <g fill="none" stroke="var(--dar)" stroke-width=".6">
+        <circle cx="297" cy="0" r="86"/>
+        <circle cx="297" cy="0" r="64"/>
+      </g>
+    </symbol>
   </defs>
 </svg>
 
@@ -493,6 +538,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet dark cover">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <div class="cover-grid">
     <div class="cover-main">
       <div class="brandline">
@@ -544,6 +590,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">02</span>
     <b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -613,6 +660,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">03</span>
     <b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -627,15 +675,29 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       <div class="aside-stat"><span class="stat"><span class="n">8<em>+8</em></span><span class="t">Solutions ·<br>Functions</span></span></div>
     </header>
     <div class="s3-cols">
-      <div class="sol-grid">
-        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div><div class="tx">Executive Search</div><span class="sub">Board &amp; C-suite mandates</span></div></div>
-        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div><div><div class="tx">Executive Assessment</div><span class="sub">Objective leadership evaluation</span></div></div>
-        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-radar"/></svg></div><div><div class="tx">Market Intelligence</div><span class="sub">Talent &amp; compensation insight</span></div></div>
-        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-compass"/></svg></div><div><div class="tx">Discovering Leaders</div><span class="sub">Mapping tomorrow's executives</span></div></div>
-        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bridge"/></svg></div><div><div class="tx">Career Transition Services</div><span class="sub">Guided executive movement</span></div></div>
-        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div><div><div class="tx">Senior &amp; Mid-Level Hiring</div><span class="sub">Depth beyond the C-suite</span></div></div>
-        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tree"/></svg></div><div><div class="tx">Succession Planning</div><span class="sub">Leadership continuity, secured</span></div></div>
-        <div class="sol dei"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-hands"/></svg></div><div><div class="tx">Diversity, Equity &amp; Inclusion</div><span class="sub">Built into every search</span></div></div>
+      <div class="trail">
+        <svg class="under" viewBox="0 0 143 152" preserveAspectRatio="xMidYMid meet">
+          <path d="M56,140 C56,132 86,131 86,123 C86,115 56,114 56,106 C56,98 86,97 86,89 C86,81 56,80 56,72 C56,64 86,63 86,55 C86,47 56,46 56,38 C56,30 86,29 86,21"
+                fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round"/>
+        </svg>
+        <p class="tcap">Eight solutions.<br><b>One ascent.</b></p>
+        <div class="tnod"    style="left:56mm;top:140mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div>
+        <div class="tlab L" style="left:0;width:46mm;top:135.5mm"><div class="nm">Executive Search</div><div class="sb">Board &amp; C-suite mandates</div></div>
+        <div class="tnod em" style="left:86mm;top:123mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div>
+        <div class="tlab"   style="left:94mm;width:47mm;top:118.5mm"><div class="nm">Executive Assessment</div><div class="sb">Objective leadership evaluation</div></div>
+        <div class="tnod"    style="left:56mm;top:106mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-radar"/></svg></div>
+        <div class="tlab L" style="left:0;width:46mm;top:101.5mm"><div class="nm">Market Intelligence</div><div class="sb">Talent &amp; compensation insight</div></div>
+        <div class="tnod em" style="left:86mm;top:89mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-compass"/></svg></div>
+        <div class="tlab"   style="left:94mm;width:47mm;top:84.5mm"><div class="nm">Discovering Leaders</div><div class="sb">Mapping tomorrow's executives</div></div>
+        <div class="tnod"    style="left:56mm;top:72mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bridge"/></svg></div>
+        <div class="tlab L" style="left:0;width:46mm;top:67.5mm"><div class="nm">Career Transition Services</div><div class="sb">Guided executive movement</div></div>
+        <div class="tnod em" style="left:86mm;top:55mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div>
+        <div class="tlab"   style="left:94mm;width:47mm;top:50.5mm"><div class="nm">Senior &amp; Mid-Level Hiring</div><div class="sb">Depth beyond the C-suite</div></div>
+        <div class="tnod"    style="left:56mm;top:38mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tree"/></svg></div>
+        <div class="tlab L" style="left:0;width:46mm;top:33.5mm"><div class="nm">Succession Planning</div><div class="sb">Leadership continuity, secured</div></div>
+        <svg class="tflag" style="left:86mm;top:12mm" viewBox="0 0 24 24"><use href="#i-flag" class="ic"/></svg>
+        <div class="tnod dei" style="left:86mm;top:21mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-hands"/></svg></div>
+        <div class="tlab"   style="left:96.5mm;width:46mm;top:15mm"><div class="nm gold">Diversity, Equity &amp; Inclusion</div><div class="sb">Built into every search</div></div>
       </div>
       <div class="fn-panel">
         <h3>Functions</h3>
@@ -662,6 +724,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">04</span>
     <b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -707,6 +770,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">05</span>
     <b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -766,6 +830,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">06</span>
     <b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -817,6 +882,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet dark">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">07</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b>
@@ -865,6 +931,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">08</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b>
@@ -908,6 +975,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">09</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b>
@@ -965,6 +1033,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">10</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b>
@@ -1053,6 +1122,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">11</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b>
@@ -1100,6 +1170,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">12</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b>
@@ -1149,6 +1220,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 ================================================================ -->
 <section class="sheet dark">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
     <span class="num">13</span>
     <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b>

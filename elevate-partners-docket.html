@@ -186,33 +186,34 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .s2-para .hl{color:var(--brasstxt);font-weight:700}
 .s2-quoteRule{width:12mm;height:1mm;background:var(--brass);margin:5.5mm 0 4.5mm}
 .s2-right{position:relative;display:flex;flex-direction:column}
-.s2-right h2{font-size:4.6mm;font-weight:800;letter-spacing:.02em;margin-bottom:4mm}
+.s2-right h2{font-size:4.6mm;font-weight:800;letter-spacing:.02em;text-align:center}
 .s2-right h2 em{font-style:normal;color:var(--brasstxt)}
-.adv-wrap{position:relative;flex:1;display:grid;grid-template-columns:1fr 34mm 1fr;column-gap:0;row-gap:4mm}
-.adv-spine{position:absolute;left:50%;top:2mm;bottom:2mm;width:.4mm;background:var(--line);translate:-50% 0}
+/* radial advantage infographic */
+.orbit{position:relative;width:139mm;height:157mm;margin:auto;flex:none}
+.orbit svg.under{position:absolute;inset:0;width:100%;height:100%}
 .adv-hub{
-  position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;
-  width:31mm;height:31mm;border-radius:50%;background:var(--ink);color:#EDF3F1;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6mm;
-  text-align:center;padding:3mm;border:1.1mm solid var(--brass);
+  position:absolute;left:69.5mm;top:79mm;translate:-50% -50%;z-index:3;
+  width:45mm;height:45mm;border-radius:50%;background:var(--ink);color:#EDF3F1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm;
+  text-align:center;padding:4mm;border:1.2mm solid var(--brass);
+  box-shadow:0 0 0 1.8mm var(--paper),0 0 0 2.2mm var(--line);
 }
-.adv-hub .hi{width:7mm;height:7mm;color:var(--brass)}
-.adv-hub .ht{font-size:2.9mm;font-weight:700;line-height:1.25}
-.adv-card{
-  position:relative;background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
-  padding:3.2mm 3.6mm;display:flex;gap:3.2mm;align-items:center;
+.adv-hub .hi{width:9mm;height:9mm;color:var(--brass)}
+.adv-hub .ht{font-size:3.4mm;font-weight:700;line-height:1.3}
+.nod{
+  position:absolute;z-index:2;translate:-50% -50%;
+  width:15mm;height:15mm;border-radius:50%;padding:3.4mm;
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  background:var(--pine);
+  box-shadow:0 0 0 1.4mm var(--paper),0 0 0 1.8mm var(--line),0 1mm 3mm rgba(12,46,49,.25);
 }
-.adv-card .cn{position:absolute;top:-1.6mm;font-size:2.5mm;font-weight:800;color:var(--brasstxt);
-  background:var(--paper);padding:0 1.4mm;letter-spacing:.12em}
-.adv-card.l .cn{right:4mm}.adv-card.r .cn{left:4mm}
-.adv-card .tx{font-size:3.35mm;line-height:1.4;color:#28403F;font-weight:500}
-.adv-card .tx b{font-size:5.6mm;font-weight:800;color:var(--pine);line-height:1;letter-spacing:-.02em}
-.adv-card.l{grid-column:1}.adv-card.r{grid-column:3}
-.adv-card.l::after,.adv-card.r::after{
-  content:"";position:absolute;top:50%;width:8mm;height:.4mm;background:var(--line);
+.nod.em{background:var(--emerald)}
+.nod.br{background:var(--brass);color:var(--ink)}
+.ntx{
+  position:absolute;z-index:2;font-size:3.15mm;line-height:1.38;font-weight:500;color:#28403F;
 }
-.adv-card.l::after{right:-8mm}.adv-card.r::after{left:-8mm}
-.adv-gap{grid-column:2}
+.ntx b{font-size:6mm;font-weight:800;color:var(--pine);line-height:1;letter-spacing:-.02em}
+.ntx .bb{font-weight:800;color:var(--ink);font-size:inherit;letter-spacing:0}
 
 /* ============================================================ 03 SOLUTIONS */
 .s3-cols{display:grid;grid-template-columns:1fr 88mm;gap:9mm;flex:1;min-height:0}
@@ -559,21 +560,44 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       </div>
       <div class="s2-right">
         <h2>The Elevate <em>Advantage</em></h2>
-        <div class="adv-wrap">
-          <div class="adv-spine"></div>
+        <div class="orbit">
+          <svg class="under" viewBox="0 0 139 157" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <marker id="mdot" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="4.5" markerHeight="4.5">
+                <circle cx="3" cy="3" r="2.6" fill="context-stroke"/>
+              </marker>
+            </defs>
+            <!-- orbit rings -->
+            <circle cx="69.5" cy="79" r="54" fill="none" stroke="#C6D4D0" stroke-width=".45" stroke-dasharray="2.4 2.6"/>
+            <circle cx="69.5" cy="79" r="31" fill="none" stroke="#C6D4D0" stroke-width=".4" stroke-dasharray="1 2.2" opacity=".7"/>
+            <!-- spokes -->
+            <g stroke-width=".8" fill="none" opacity=".85">
+              <path d="M69.5 79 49 27"   stroke="#14464C" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 90 27"   stroke="#2C9C6A" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 17 79"   stroke="#2C9C6A" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 122 79"  stroke="#C39A2B" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 49 131"  stroke="#C39A2B" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 90 131"  stroke="#14464C" marker-end="url(#mdot)"/>
+            </g>
+          </svg>
+          <!-- hub -->
           <div class="adv-hub">
             <svg class="hi" viewBox="0 0 24 24"><use href="#i-handshake" class="ic" style="stroke:currentColor;fill:none"/></svg>
-            <div class="ht">Trusted Partner to Level-Up Growth</div>
+            <div class="ht">Trusted Partner<br>to Level-Up<br>Growth</div>
           </div>
-          <div class="adv-card l"><span class="cn">A1</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Expertise to Serve <b>14</b> Industries</div></div>
-          <div class="adv-gap"></div>
-          <div class="adv-card r"><span class="cn">A2</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div><div class="tx">Have a reputation of exceeding expectations for On&nbsp;Time delivery with High Quality</div></div>
-          <div class="adv-card l"><span class="cn">A3</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Strong Capability with Start-up mindset</div></div>
-          <div class="adv-gap"></div>
-          <div class="adv-card r"><span class="cn">A4</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div><div class="tx">Strong Relationship with Executives across Industries</div></div>
-          <div class="adv-card l"><span class="cn">A5</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div><div class="tx">Ability to ramp up resources in short timelines</div></div>
-          <div class="adv-gap"></div>
-          <div class="adv-card r"><span class="cn">A6</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div><div class="tx">Successfully delivered over <b>30</b> Key Leadership Positions</div></div>
+          <!-- satellites -->
+          <div class="nod"    style="left:49mm;top:27mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div>
+          <div class="ntx" style="left:0;width:41mm;top:15mm;text-align:right">Expertise to Serve <b>14</b><br><span class="bb">Industries</span></div>
+          <div class="nod em" style="left:90mm;top:27mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div>
+          <div class="ntx" style="left:98mm;width:41mm;top:13mm">Have a reputation of exceeding expectations for <span class="bb">On Time delivery with High Quality</span></div>
+          <div class="nod em" style="left:17mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div>
+          <div class="ntx" style="left:0;width:34mm;top:90mm;text-align:center">Strong Capability with <span class="bb">Start-up mindset</span></div>
+          <div class="nod br" style="left:122mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div>
+          <div class="ntx" style="left:105mm;width:34mm;top:90mm;text-align:center">Strong Relationship with <span class="bb">Executives across Industries</span></div>
+          <div class="nod br" style="left:49mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+          <div class="ntx" style="left:0;width:41mm;top:141mm;text-align:right">Ability to <span class="bb">ramp up resources</span> in short timelines</div>
+          <div class="nod"    style="left:90mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div>
+          <div class="ntx" style="left:98mm;width:41mm;top:141mm">Successfully delivered over <b>30</b> <span class="bb">Key Leadership Positions</span></div>
         </div>
       </div>
     </div>

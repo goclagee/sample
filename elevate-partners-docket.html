@@ -61,12 +61,12 @@ b,strong{font-weight:700}
 /* ---------- layered background décor ---------- */
 .deco{
   position:absolute;inset:5mm;z-index:0;pointer-events:none;
-  --dw1:rgba(29,106,102,.05);--dw2:rgba(195,154,43,.07);
-  --dct:rgba(20,70,76,.10);--dar:rgba(195,154,43,.18);
+  --dw1:rgba(29,106,102,.05);--dw2:rgba(176,36,40,.055);
+  --dct:rgba(20,70,76,.10);--dar:rgba(176,36,40,.15);
 }
 .dark .deco{
-  --dw1:rgba(237,243,241,.04);--dw2:rgba(195,154,43,.06);
-  --dct:rgba(237,243,241,.06);--dar:rgba(195,154,43,.22);
+  --dw1:rgba(237,243,241,.04);--dw2:rgba(217,96,90,.07);
+  --dct:rgba(237,243,241,.06);--dar:rgba(217,96,90,.24);
 }
 .page-body{z-index:1}
 .rail{z-index:2}
@@ -290,18 +290,23 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .fn .tx{font-size:3.25mm;font-weight:600;line-height:1.25}
 
 /* ============================================================ 04 INDUSTRIES */
-.s4-top{display:flex;align-items:flex-end;gap:8mm}
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4mm;flex:1;margin-top:1mm}
-.ind{
-  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
-  padding:3mm 3.4mm;display:flex;align-items:center;gap:3.2mm;position:relative;
+/* the industry line — a serpentine route with 14 stations */
+.serp{position:relative;height:114mm;margin-top:1mm}
+.serp svg.under{position:absolute;inset:0;width:100%;height:100%}
+.slab{
+  position:absolute;width:30mm;z-index:2;
+  display:flex;justify-content:center;text-align:center;
+  font-size:3.05mm;font-weight:700;line-height:1.24;
 }
-.ind .code{
-  position:absolute;top:1.8mm;right:2.6mm;font-size:2.3mm;font-weight:700;color:var(--line);
-  letter-spacing:.1em;font-variant-numeric:tabular-nums;
+.slab.up{top:7mm;height:17mm;align-items:flex-end}
+.slab.dn{top:93mm;height:17mm;align-items:flex-start}
+.ind-center{
+  position:absolute;left:50%;top:58mm;translate:-50% -50%;z-index:2;
+  display:flex;align-items:center;gap:4.5mm;
 }
-.ind .icbox{width:8mm;height:8mm;padding:1.8mm}
-.ind .tx{font-size:3.1mm;font-weight:700;line-height:1.22}
+.ind-center .big{font-size:18mm;font-weight:800;color:var(--red);letter-spacing:-.03em;line-height:1}
+.ind-center .cap{font-size:3.2mm;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);font-weight:700;line-height:1.6}
+.vib .ind-note{background:var(--red2)}
 .ind-note{
   margin-top:4.6mm;background:var(--ink);border-radius:3mm;color:#EDF3F1;
   padding:4.6mm 7mm;display:flex;align-items:center;gap:7mm;
@@ -455,6 +460,9 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 /* ============================================================ vibrant variant */
 .vib .eyebrow{color:var(--red)}
 .vib .eyebrow::before{background:var(--red)}
+.vib .frame i{border-color:var(--red)}
+.vib .rail b.on{background:var(--red)}
+.vib .rail .num{color:var(--red)}
 .vib .stat .n{color:var(--red)}
 .vib .stat .n em{color:var(--org)}
 /* slide 2 */
@@ -758,7 +766,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      04 — INDUSTRIES
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -772,23 +780,41 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
         <div class="eyebrow">Industries</div>
         <h1 class="title">Fourteen sectors. One standard.</h1>
       </div>
-      <div class="aside-stat"><span class="stat"><span class="n">14</span><span class="t">Industries<br>Served</span></span></div>
     </header>
-    <div class="ind-grid">
-      <div class="ind"><span class="code">01</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chip"/></svg></div><div class="tx">Technology Services</div></div>
-      <div class="ind"><span class="code">02</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cloud"/></svg></div><div class="tx">SAAS — Crypto to Cloud</div></div>
-      <div class="ind"><span class="code">03</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cart"/></svg></div><div class="tx">Internet E-Commerce</div></div>
-      <div class="ind"><span class="code">04</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div><div class="tx">Banking, FinTech</div></div>
-      <div class="ind"><span class="code">05</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></div><div class="tx">Telecom</div></div>
-      <div class="ind"><span class="code">06</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tag"/></svg></div><div class="tx">Retail</div></div>
-      <div class="ind"><span class="code">07</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-truck"/></svg></div><div class="tx">Logistics</div></div>
-      <div class="ind"><span class="code">08</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pie"/></svg></div><div class="tx">Private Equity</div></div>
-      <div class="ind"><span class="code">09</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Start-Up &amp; Scale-Ups</div></div>
-      <div class="ind"><span class="code">10</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div><div class="tx">Venture Capital</div></div>
-      <div class="ind"><span class="code">11</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Industrial</div></div>
-      <div class="ind"><span class="code">12</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-boxes"/></svg></div><div class="tx">Supply Chain &amp; Operations</div></div>
-      <div class="ind"><span class="code">13</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-film"/></svg></div><div class="tx">Media &amp; Entertainment</div></div>
-      <div class="ind"><span class="code">14</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pulse"/></svg></div><div class="tx">Health Care &amp; Life Sciences</div></div>
+    <div class="serp">
+      <svg class="under" viewBox="0 0 240 114" preserveAspectRatio="none">
+        <path d="M18,32 H216 C233,32 233,84 216,84 H18"
+              fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round"/>
+      </svg>
+      <div class="tnod c1" style="left:18mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chip"/></svg></div>
+      <div class="slab up" style="left:3mm">Technology Services</div>
+      <div class="tnod c2" style="left:51mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cloud"/></svg></div>
+      <div class="slab up" style="left:36mm">SAAS — Crypto to Cloud</div>
+      <div class="tnod c3" style="left:84mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cart"/></svg></div>
+      <div class="slab up" style="left:69mm">Internet E-Commerce</div>
+      <div class="tnod c4" style="left:117mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div>
+      <div class="slab up" style="left:102mm">Banking, FinTech</div>
+      <div class="tnod c5" style="left:150mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></div>
+      <div class="slab up" style="left:135mm">Telecom</div>
+      <div class="tnod c6" style="left:183mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tag"/></svg></div>
+      <div class="slab up" style="left:168mm">Retail</div>
+      <div class="tnod c7" style="left:216mm;top:32mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-truck"/></svg></div>
+      <div class="slab up" style="left:201mm">Logistics</div>
+      <div class="tnod c1" style="left:216mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pie"/></svg></div>
+      <div class="slab dn" style="left:201mm">Private Equity</div>
+      <div class="tnod c2" style="left:183mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div>
+      <div class="slab dn" style="left:168mm">Start-Up &amp; Scale-Ups</div>
+      <div class="tnod c3" style="left:150mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      <div class="slab dn" style="left:135mm">Venture Capital</div>
+      <div class="tnod c4" style="left:117mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div>
+      <div class="slab dn" style="left:102mm">Industrial</div>
+      <div class="tnod c5" style="left:84mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-boxes"/></svg></div>
+      <div class="slab dn" style="left:69mm">Supply Chain &amp; Operations</div>
+      <div class="tnod c6" style="left:51mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-film"/></svg></div>
+      <div class="slab dn" style="left:36mm">Media &amp; Entertainment</div>
+      <div class="tnod c7" style="left:18mm;top:84mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pulse"/></svg></div>
+      <div class="slab dn" style="left:3mm">Health Care &amp; Life Sciences</div>
+      <div class="ind-center"><span class="big">14</span><span class="cap">Industries<br>Served</span></div>
     </div>
     <div class="ind-note">
       <svg class="mk" viewBox="0 0 24 24" style="color:#C39A2B"><use href="#i-arrowup" class="ic"/></svg>

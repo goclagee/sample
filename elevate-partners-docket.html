@@ -1,0 +1,1145 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elevate Partners — Executive Search Docket</title>
+<style>
+/* ============================================================
+   ELEVATE PARTNERS — EXECUTIVE SEARCH DOCKET
+   Design system: "The Ascent" — altitude, elevation, level-up.
+   A4 landscape print document. 13 sheets.
+   ============================================================ */
+:root{
+  --ink:      #0C2E31;   /* deep pine-teal ground        */
+  --pine:     #14464C;   /* brand teal                   */
+  --teal:     #1D6A66;   /* mid teal                     */
+  --emerald:  #2C9C6A;   /* level-up green               */
+  --brass:    #C39A2B;   /* gold accent (surfaces)       */
+  --brasstxt: #96751B;   /* gold accent (text on paper)  */
+  --paper:    #F2F5F4;   /* teal-tinted paper            */
+  --card:     #FFFFFF;
+  --line:     #D3DEDB;   /* hairlines                    */
+  --mute:     #5C7370;   /* secondary text               */
+  --sans: 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --serif: Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper)}
+body{
+  font-family:var(--sans);color:var(--ink);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+b,strong{font-weight:700}
+
+/* ---------- sheet geometry ---------- */
+.sheet{
+  width:297mm;height:210mm;position:relative;overflow:hidden;
+  background:var(--paper);
+  page-break-after:always;break-after:page;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+.sheet:last-child{page-break-after:auto;break-after:auto}
+.sheet.dark{background:var(--ink);color:#EDF3F1}
+
+/* hairline docket frame */
+.frame{
+  position:absolute;inset:5mm;border:.35mm solid var(--line);
+  pointer-events:none;
+}
+.dark .frame{border-color:rgba(237,243,241,.22)}
+.frame i{position:absolute;width:4mm;height:4mm;border-color:var(--brass);border-style:solid;border-width:0}
+.frame i:nth-child(1){top:-.35mm;left:-.35mm;border-top-width:.6mm;border-left-width:.6mm}
+.frame i:nth-child(2){top:-.35mm;right:-.35mm;border-top-width:.6mm;border-right-width:.6mm}
+.frame i:nth-child(3){bottom:-.35mm;left:-.35mm;border-bottom-width:.6mm;border-left-width:.6mm}
+.frame i:nth-child(4){bottom:-.35mm;right:-.35mm;border-bottom-width:.6mm;border-right-width:.6mm}
+
+/* ---------- altimeter rail (deck position indicator) ---------- */
+.rail{
+  position:absolute;left:5mm;top:5mm;bottom:5mm;width:11mm;
+  border-right:.35mm solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.6mm;
+}
+.dark .rail{border-right-color:rgba(237,243,241,.22)}
+.rail b{display:block;width:3.4mm;height:.45mm;background:var(--line);border-radius:1mm}
+.dark .rail b{background:rgba(237,243,241,.3)}
+.rail b.on{width:6.2mm;height:1.1mm;background:var(--brass)}
+.rail .lab{
+  position:absolute;bottom:8mm;left:50%;
+  transform:rotate(180deg);writing-mode:vertical-rl;translate:-50% 0;
+  font-size:2.5mm;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);font-weight:600;
+  white-space:nowrap;
+}
+.dark .rail .lab{color:rgba(237,243,241,.55)}
+.rail .num{
+  position:absolute;top:7.5mm;left:50%;translate:-50% 0;
+  font-size:3mm;font-weight:800;color:var(--brasstxt);letter-spacing:.05em;
+}
+.dark .rail .num{color:var(--brass)}
+
+/* ---------- shared page chrome ---------- */
+.page-body{position:absolute;inset:5mm 5mm 5mm 16mm;padding:8mm 9mm 12mm 9mm;display:flex;flex-direction:column}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:8mm;margin-bottom:5.5mm}
+.eyebrow{
+  font-size:3mm;letter-spacing:.34em;text-transform:uppercase;font-weight:700;color:var(--brasstxt);
+  display:flex;align-items:center;gap:3mm;margin-bottom:2mm;
+}
+.dark .eyebrow{color:var(--brass)}
+.eyebrow::before{content:"";width:8mm;height:.6mm;background:var(--brass)}
+h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+.head .aside-stat{text-align:right;flex:none}
+.foot{
+  position:absolute;left:16mm;right:5mm;bottom:5mm;height:9mm;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 9mm;border-top:.35mm solid var(--line);
+}
+.dark .foot{border-top-color:rgba(237,243,241,.22)}
+.foot .wm{display:flex;align-items:center;gap:2.6mm;font-size:3.1mm;letter-spacing:.18em;font-weight:800}
+.foot .wm span{font-weight:400;letter-spacing:.18em;color:var(--mute)}
+.dark .foot .wm span{color:rgba(237,243,241,.6)}
+.foot .site{font-size:2.8mm;letter-spacing:.12em;color:var(--mute);text-transform:lowercase}
+.dark .foot .site{color:rgba(237,243,241,.6)}
+
+/* level-up mark */
+.mark{width:5.2mm;height:5.2mm;flex:none}
+.mark .u{stroke:var(--ink);fill:none;stroke-width:2.6;stroke-linecap:round}
+.dark .mark .u{stroke:#EDF3F1}
+.mark .a{stroke:var(--emerald);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* icons */
+.ic{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.icbox{
+  width:9mm;height:9mm;border-radius:2.2mm;flex:none;
+  display:flex;align-items:center;justify-content:center;padding:2mm;
+  background:var(--ink);color:#EDF3F1;
+}
+.icbox.em{background:var(--emerald)}
+.icbox.br{background:var(--brass);color:var(--ink)}
+.icbox.ol{background:transparent;border:.4mm solid var(--line);color:var(--pine)}
+
+/* stat chip */
+.stat{
+  display:inline-flex;align-items:baseline;gap:2mm;
+  border:.4mm solid var(--line);border-radius:2mm;padding:2.2mm 4mm;background:var(--card);
+}
+.stat .n{font-size:8mm;font-weight:800;letter-spacing:-.02em;color:var(--pine);font-variant-numeric:tabular-nums}
+.stat .n em{font-style:normal;color:var(--brasstxt)}
+.stat .t{font-size:2.7mm;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);font-weight:600}
+
+/* chips */
+.chip{
+  display:inline-block;padding:1.5mm 3.2mm;border-radius:10mm;
+  border:.35mm solid var(--line);background:var(--card);
+  font-size:2.9mm;font-weight:600;color:var(--pine);white-space:nowrap;
+}
+.chip.solid{background:var(--ink);border-color:var(--ink);color:#EDF3F1}
+.chip.gold{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+
+/* ============================================================ 01 COVER */
+.cover .page-body{inset:5mm;padding:0}
+.cover-grid{position:absolute;inset:5mm;display:grid;grid-template-columns:1fr 96mm}
+.cover-main{padding:14mm 12mm 14mm 16mm;display:flex;flex-direction:column;position:relative}
+.cover-side{
+  position:relative;border-left:.35mm solid rgba(237,243,241,.22);
+  padding:14mm 10mm 14mm 10mm;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.brandline{display:flex;align-items:center;gap:4mm}
+.brandline .mark{width:9mm;height:9mm}
+.brandline .lu{font-size:3mm;letter-spacing:.42em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.cover h1{
+  margin-top:16mm;font-size:27mm;line-height:.92;font-weight:800;letter-spacing:-.025em;color:#F4F8F6;
+}
+.cover h1 span{
+  display:block;font-size:10.5mm;letter-spacing:.42em;font-weight:300;color:rgba(237,243,241,.85);margin-top:3.5mm;
+}
+.cover .docket-tag{
+  margin-top:5mm;display:inline-flex;align-self:flex-start;align-items:center;gap:3mm;
+  border:.35mm solid rgba(237,243,241,.35);border-radius:10mm;padding:1.8mm 4.5mm;
+  font-size:3mm;letter-spacing:.3em;text-transform:uppercase;color:rgba(237,243,241,.85);
+}
+.manifesto{margin-top:auto;display:flex;flex-direction:column}
+.manifesto .row{
+  display:flex;align-items:baseline;gap:5mm;padding:4.6mm 0;
+  border-top:.35mm solid rgba(237,243,241,.18);
+}
+.manifesto .row:first-child{border-top:none}
+.manifesto .no{font-size:3.2mm;font-weight:700;color:var(--brass);letter-spacing:.1em;font-variant-numeric:tabular-nums;flex:none}
+.manifesto .tx{font-size:5.2mm;line-height:1.32;color:#EDF3F1;font-weight:350;max-width:158mm}
+.manifesto .tx b{color:#fff}
+.cover-steps{position:relative;height:74mm;margin-bottom:10mm}
+.cover-steps svg{position:absolute;inset:0;width:100%;height:100%}
+.cover-tagline{
+  font-family:var(--serif);font-style:italic;font-size:5.2mm;line-height:1.45;color:#EDF3F1;
+}
+.cover-tagline b{color:var(--brass);font-style:normal;font-family:var(--sans);font-weight:800}
+.cover-visit{margin-top:8mm;padding-top:5mm;border-top:.35mm solid rgba(237,243,241,.22)}
+.cover-visit .k{font-size:2.7mm;letter-spacing:.3em;text-transform:uppercase;color:rgba(237,243,241,.55);font-weight:600}
+.cover-visit .v{font-size:3.7mm;color:#fff;font-weight:600;margin-top:1.5mm;letter-spacing:.04em}
+
+/* ============================================================ 02 WE ARE */
+.s2-cols{display:grid;grid-template-columns:92mm 1fr;gap:9mm;flex:1;min-height:0}
+.s2-left{display:flex;flex-direction:column}
+.levelup{
+  font-family:var(--serif);font-style:italic;font-size:8.6mm;line-height:1.12;color:var(--pine);
+  text-wrap:balance;
+}
+.levelup b{font-family:var(--sans);font-style:normal;font-weight:800;color:var(--ink)}
+.s2-para{margin-top:5mm;font-size:3.5mm;line-height:1.62;color:#31494B;text-align:justify}
+.s2-para + .s2-para{margin-top:3.5mm}
+.s2-para .hl{color:var(--brasstxt);font-weight:700}
+.s2-quoteRule{width:12mm;height:1mm;background:var(--brass);margin:5.5mm 0 4.5mm}
+.s2-right{position:relative;display:flex;flex-direction:column}
+.s2-right h2{font-size:4.6mm;font-weight:800;letter-spacing:.02em;margin-bottom:4mm}
+.s2-right h2 em{font-style:normal;color:var(--brasstxt)}
+.adv-wrap{position:relative;flex:1;display:grid;grid-template-columns:1fr 34mm 1fr;column-gap:0;row-gap:4mm}
+.adv-spine{position:absolute;left:50%;top:2mm;bottom:2mm;width:.4mm;background:var(--line);translate:-50% 0}
+.adv-hub{
+  position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;
+  width:31mm;height:31mm;border-radius:50%;background:var(--ink);color:#EDF3F1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6mm;
+  text-align:center;padding:3mm;border:1.1mm solid var(--brass);
+}
+.adv-hub .hi{width:7mm;height:7mm;color:var(--brass)}
+.adv-hub .ht{font-size:2.9mm;font-weight:700;line-height:1.25}
+.adv-card{
+  position:relative;background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
+  padding:3.2mm 3.6mm;display:flex;gap:3.2mm;align-items:center;
+}
+.adv-card .cn{position:absolute;top:-1.6mm;font-size:2.5mm;font-weight:800;color:var(--brasstxt);
+  background:var(--paper);padding:0 1.4mm;letter-spacing:.12em}
+.adv-card.l .cn{right:4mm}.adv-card.r .cn{left:4mm}
+.adv-card .tx{font-size:3.35mm;line-height:1.4;color:#28403F;font-weight:500}
+.adv-card .tx b{font-size:5.6mm;font-weight:800;color:var(--pine);line-height:1;letter-spacing:-.02em}
+.adv-card.l{grid-column:1}.adv-card.r{grid-column:3}
+.adv-card.l::after,.adv-card.r::after{
+  content:"";position:absolute;top:50%;width:8mm;height:.4mm;background:var(--line);
+}
+.adv-card.l::after{right:-8mm}.adv-card.r::after{left:-8mm}
+.adv-gap{grid-column:2}
+
+/* ============================================================ 03 SOLUTIONS */
+.s3-cols{display:grid;grid-template-columns:1fr 88mm;gap:9mm;flex:1;min-height:0}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.6mm;align-content:stretch}
+.sol{
+  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
+  padding:3.4mm 4mm;display:flex;align-items:center;gap:3.6mm;
+}
+.sol .tx{font-size:3.55mm;font-weight:700;letter-spacing:.01em}
+.sol .sub{display:block;font-size:2.6mm;font-weight:500;color:var(--mute);margin-top:.8mm;letter-spacing:.02em}
+.sol.dei{background:var(--ink);border-color:var(--ink)}
+.sol.dei .tx{color:var(--brass)}
+.sol.dei .sub{color:rgba(237,243,241,.7)}
+.fn-panel{
+  background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:5mm 5.5mm;
+  display:flex;flex-direction:column;
+}
+.fn-panel h3{font-size:3.1mm;letter-spacing:.32em;text-transform:uppercase;color:var(--brasstxt);font-weight:700;margin-bottom:1.6mm}
+.fn-panel .fn-sub{font-size:2.9mm;color:var(--mute);margin-bottom:3mm}
+.fn{display:flex;align-items:center;gap:3.4mm;padding:2.52mm 0;border-top:.3mm solid var(--line)}
+.fn .no{
+  width:8.4mm;height:8.4mm;border-radius:50%;flex:none;
+  border:.45mm solid var(--brass);color:var(--brasstxt);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.9mm;font-weight:800;font-variant-numeric:tabular-nums;
+}
+.fn:nth-child(2n) .no{background:var(--ink);border-color:var(--ink);color:var(--brass)}
+.fn .tx{font-size:3.25mm;font-weight:600;line-height:1.25}
+
+/* ============================================================ 04 INDUSTRIES */
+.s4-top{display:flex;align-items:flex-end;gap:8mm}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4mm;flex:1;margin-top:1mm}
+.ind{
+  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;
+  padding:3mm 3.4mm;display:flex;align-items:center;gap:3.2mm;position:relative;
+}
+.ind .code{
+  position:absolute;top:1.8mm;right:2.6mm;font-size:2.3mm;font-weight:700;color:var(--line);
+  letter-spacing:.1em;font-variant-numeric:tabular-nums;
+}
+.ind .icbox{width:8mm;height:8mm;padding:1.8mm}
+.ind .tx{font-size:3.1mm;font-weight:700;line-height:1.22}
+.ind-note{
+  margin-top:4.6mm;background:var(--ink);border-radius:3mm;color:#EDF3F1;
+  padding:4.6mm 7mm;display:flex;align-items:center;gap:7mm;
+}
+.ind-note .q{font-family:var(--serif);font-style:italic;font-size:4.15mm;line-height:1.45;flex:1}
+.ind-note .q b{color:var(--brass);font-style:normal;font-family:var(--sans);font-weight:800}
+.ind-note .mk{width:10mm;height:10mm;flex:none}
+
+/* ============================================================ 05 ASSIGNMENTS */
+.tr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm;flex:1;align-content:stretch}
+.tr{
+  background:var(--card);border:.35mm solid var(--line);border-radius:2.2mm;
+  padding:2.2mm 2.8mm;display:flex;gap:2.6mm;align-items:flex-start;min-height:0;
+}
+.tr .no{
+  flex:none;width:6.6mm;height:6.6mm;border-radius:50%;margin-top:.4mm;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.55mm;font-weight:800;font-variant-numeric:tabular-nums;
+  background:var(--paper);border:.4mm solid var(--line);color:var(--pine);
+}
+.tr:nth-child(3n+1) .no{background:var(--ink);border-color:var(--ink);color:#EDF3F1}
+.tr:nth-child(3n+2) .no{background:transparent;border-color:var(--brass);color:var(--brasstxt)}
+.tr:nth-child(3n) .no{background:var(--emerald);border-color:var(--emerald);color:#fff}
+.tr .role{font-size:2.72mm;font-weight:700;line-height:1.24}
+.tr .org{display:block;font-size:2.6mm;font-weight:400;color:var(--mute);line-height:1.24;margin-top:.5mm}
+
+/* ============================================================ 06 METHODOLOGY */
+.steps{position:relative;height:64mm;display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;align-items:end;margin-top:2mm}
+.step{position:relative;display:flex;flex-direction:column;border-radius:2.6mm 2.6mm 0 0;
+  background:var(--card);border:.35mm solid var(--line);border-bottom:1.2mm solid var(--brass);
+  padding:3.6mm 3.8mm;
+}
+.step .sn{font-size:2.6mm;letter-spacing:.3em;font-weight:700;color:var(--brasstxt);text-transform:uppercase}
+.step .sn b{font-size:6.4mm;letter-spacing:0;color:var(--pine);display:block;line-height:1.05;margin-top:.8mm}
+.step .st{font-size:3.2mm;font-weight:700;line-height:1.3;margin-top:2mm}
+.step .icbox{position:absolute;top:-4.6mm;right:3.4mm;width:9.2mm;height:9.2mm}
+.step.h1x{height:40mm}.step.h2x{height:45mm}.step.h3x{height:50mm}.step.h4x{height:55mm}.step.h5x{height:60mm}
+.step.h5x{background:var(--ink);border-color:var(--ink);color:#EDF3F1}
+.step.h5x .sn b{color:var(--brass)}
+.step.h5x .st{color:#fff}
+.climb{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none}
+.s6-lead{display:grid;grid-template-columns:52mm 1fr;gap:8mm;margin-top:7mm;flex:1;min-height:0}
+.s6-founder{
+  background:var(--ink);border-radius:3mm;color:#EDF3F1;padding:5mm;
+  display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:2.4mm;
+}
+.s6-founder .ava{
+  width:17mm;height:17mm;border-radius:50%;border:1mm solid var(--brass);
+  display:flex;align-items:center;justify-content:center;
+  font-size:6.4mm;font-weight:800;color:var(--brass);letter-spacing:.04em;
+}
+.s6-founder .nm{font-size:4.4mm;font-weight:800;line-height:1.15}
+.s6-founder .rl{font-size:2.7mm;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.s6-founder .of{font-size:2.9mm;color:rgba(237,243,241,.75)}
+.s6-bio{display:flex;flex-direction:column;min-height:0}
+.s6-bio h2{font-size:4.6mm;font-weight:800;margin-bottom:3mm}
+.s6-bio h2 em{font-style:normal;color:var(--brasstxt)}
+.s6-bio p{font-size:3.3mm;line-height:1.58;color:#31494B;text-align:justify}
+.s6-bio p + p{margin-top:2.6mm}
+.s6-firms{display:flex;gap:2.6mm;flex-wrap:wrap;margin-top:3.4mm;align-items:center}
+.s6-firms .k{font-size:2.6mm;letter-spacing:.26em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-right:1mm}
+
+/* ============================================================ 07 CONNECT */
+.s7-cols{display:grid;grid-template-columns:1fr 104mm;gap:10mm;flex:1;min-height:0}
+.s7-left{display:flex;flex-direction:column;justify-content:center;padding-bottom:10mm}
+.s7-left .bigsay{font-size:10.4mm;line-height:1.2;font-weight:300;color:#EDF3F1;text-wrap:balance}
+.s7-left .bigsay b{font-weight:800;color:var(--brass)}
+.s7-vals{display:flex;flex-wrap:wrap;gap:2.6mm;margin-top:7mm}
+.s7-vals .chip{background:transparent;border-color:rgba(237,243,241,.35);color:#EDF3F1;font-size:3.1mm;padding:2mm 4mm}
+.s7-vals .lead-in{width:100%;font-size:2.8mm;letter-spacing:.3em;text-transform:uppercase;color:rgba(237,243,241,.55);font-weight:700;margin-bottom:.6mm}
+.s7-card{
+  background:#fff;color:var(--ink);border-radius:3mm;padding:7mm;display:flex;flex-direction:column;
+}
+.s7-card .k{font-size:3mm;letter-spacing:.32em;text-transform:uppercase;color:var(--brasstxt);font-weight:800}
+.s7-card .nm{font-size:6.6mm;font-weight:800;margin-top:3.4mm;letter-spacing:-.01em}
+.s7-card .rl{font-size:3.2mm;color:var(--mute);font-weight:600;margin-top:1mm;letter-spacing:.06em}
+.s7-row{display:flex;align-items:center;gap:3.6mm;padding:3.1mm 0;border-top:.3mm solid var(--line)}
+.s7-rows{margin-top:5mm}
+.s7-row .icbox{width:8mm;height:8mm;padding:1.9mm}
+.s7-row .tx{font-size:3.3mm;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+.s7-row .tx small{display:block;font-size:2.5mm;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:.6mm}
+
+/* ============================================================ 08 INTRODUCING */
+.s8-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:1mm}
+.s8-card{
+  background:var(--card);border:.35mm solid var(--line);border-radius:2.8mm;padding:4.4mm;
+  display:flex;flex-direction:column;gap:3mm;position:relative;
+}
+.s8-card .cap{font-size:2.6mm;letter-spacing:.26em;text-transform:uppercase;color:var(--brasstxt);font-weight:800}
+.s8-card p{font-size:3.12mm;line-height:1.5;color:#28403F}
+.s8-card p b{color:var(--ink)}
+.s8-recap{margin-top:5mm;background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:4.4mm 5.5mm;flex:1;display:flex;flex-direction:column;min-height:0}
+.s8-recap h3{font-size:3.1mm;letter-spacing:.32em;text-transform:uppercase;color:var(--brasstxt);font-weight:700}
+.s8-recap .hub-line{font-size:3.4mm;font-weight:700;margin-top:1.6mm}
+.s8-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:2.8mm;margin-top:3.4mm;flex:1}
+.s8-pill{display:flex;align-items:center;gap:3mm;border:.35mm solid var(--line);border-radius:2.4mm;padding:2.6mm 3.2mm;background:var(--paper)}
+.s8-pill .icbox{width:7.6mm;height:7.6mm;padding:1.8mm}
+.s8-pill .tx{font-size:2.9mm;font-weight:600;line-height:1.3}
+.s8-pill .tx b{color:var(--pine)}
+
+/* ============================================================ 09/11/12 CAPABILITIES */
+.cap-strip{background:var(--ink);border-radius:3mm;color:#EDF3F1;padding:4mm 5.5mm;margin-bottom:4.5mm}
+.cap-strip .k{font-size:2.7mm;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:2.4mm;display:flex;align-items:center;gap:2.6mm}
+.cap-strip .chips{display:flex;flex-wrap:wrap;gap:2mm}
+.cap-strip .chip{background:rgba(237,243,241,.08);border-color:rgba(237,243,241,.3);color:#EDF3F1;font-size:2.85mm;padding:1.3mm 3mm;font-weight:500}
+.cap-strip .chips .sep{align-self:center;font-size:2.7mm;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 1.6mm}
+.mand-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;flex:1;align-content:start}
+.mand{display:flex;align-items:flex-start;gap:3mm;padding:1.98mm 0;border-top:.3mm solid var(--line)}
+.mand .tick{flex:none;width:2.4mm;height:2.4mm;border-radius:.6mm;margin-top:1.4mm;background:var(--emerald)}
+.mand:nth-child(3n+2) .tick{background:var(--pine)}
+.mand:nth-child(3n) .tick{background:var(--brass)}
+.mand .role{font-size:3.02mm;font-weight:700;line-height:1.3}
+.mand .role span{font-weight:400;color:var(--mute)}
+.mand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2mm;flex:1;align-content:stretch}
+.mand-card{
+  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;padding:3.2mm 3.6mm;
+  display:flex;flex-direction:column;gap:1.2mm;justify-content:center;
+  border-left:1.2mm solid var(--emerald);
+}
+.mand-card:nth-child(3n+2){border-left-color:var(--pine)}
+.mand-card:nth-child(3n){border-left-color:var(--brass)}
+.mand-card .role{font-size:3.15mm;font-weight:700;line-height:1.28}
+.mand-card .org{font-size:2.85mm;color:var(--mute);line-height:1.3}
+
+/* ============================================================ 10 TECH LANDSCAPE */
+.tl-cols{display:grid;grid-template-columns:1.06fr 1fr 1fr;gap:4.5mm;flex:1;min-height:0}
+.tl-col{display:flex;flex-direction:column;gap:4.5mm;min-height:0}
+.tl-col .tl-panel{flex:1}
+.tl-panel{
+  background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:4mm 4.4mm;
+  display:flex;flex-direction:column;min-height:0;
+}
+.tl-panel.grow{flex:1}
+.tl-head{display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
+.tl-head .tx{font-size:3.4mm;font-weight:800;letter-spacing:.02em;line-height:1.2}
+.tl-head .ct{margin-left:auto;font-size:2.5mm;font-weight:700;color:var(--brasstxt);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.tl-chips{display:flex;flex-wrap:wrap;gap:1.9mm;align-content:flex-start}
+.tl-chips .chip{font-size:2.8mm;padding:1.3mm 2.9mm;font-weight:500;background:var(--paper)}
+
+/* ============================================================ 13 THANK YOU */
+.s13-body{position:absolute;inset:5mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20mm}
+.s13-body .mark{width:14mm;height:14mm;margin-bottom:8mm}
+.s13-body h1{font-size:24mm;font-weight:800;letter-spacing:-.02em;color:#F4F8F6;line-height:1}
+.s13-body .sub{font-family:var(--serif);font-style:italic;font-size:5.2mm;color:rgba(237,243,241,.85);margin-top:6mm}
+.s13-body .sub b{color:var(--brass);font-family:var(--sans);font-style:normal;font-weight:800}
+.s13-body .site{margin-top:10mm;font-size:4mm;letter-spacing:.24em;color:#fff;font-weight:600;text-transform:lowercase}
+.s13-body .rulez{width:16mm;height:1mm;background:var(--brass);margin-top:9mm}
+.s13-body .cta{margin-top:9mm;display:flex;gap:8mm;font-size:3.1mm;color:rgba(237,243,241,.75);letter-spacing:.06em}
+.s13-body .cta b{color:#EDF3F1}
+
+/* ============================================================ screen vs print */
+.toolbar{display:none}
+@media screen{
+  body{background:#111C1B;padding:16mm 0 20mm}
+  .sheet{margin:0 auto 10mm;box-shadow:0 6mm 18mm rgba(0,0,0,.55)}
+  .toolbar{
+    display:flex;position:fixed;z-index:50;left:50%;bottom:6mm;translate:-50% 0;
+    background:#0C2E31;color:#EDF3F1;border:1px solid rgba(237,243,241,.25);
+    border-radius:14px;padding:10px 14px;gap:14px;align-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:13px;
+  }
+  .toolbar button{
+    font-family:var(--sans);font-weight:700;font-size:13px;cursor:pointer;
+    background:var(--brass);color:#0C2E31;border:none;border-radius:9px;padding:9px 16px;letter-spacing:.04em;
+  }
+  .toolbar .tip{opacity:.85;max-width:400px;line-height:1.4}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .sheet{margin:0;box-shadow:none}
+  .toolbar{display:none!important}
+}
+@page{size:297mm 210mm;margin:0}
+</style>
+
+<!-- ============ icon library ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.2"/><path d="M15.2 15.2 21 21"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M5 8h14M4 20h16"/><path d="M7 8l-3 6h6zM17 8l-3 6h6z"/></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l6-6"/><circle cx="12" cy="12" r=".9" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2.2 5-4.8 2 2.2-5z"/></symbol>
+    <symbol id="i-bridge" viewBox="0 0 24 24"><path d="M3 16h18M3 16V9q9-6 18 0v7"/><path d="M8 16v-4.6M16 16v-4.6M12 16v-6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 21 8l-9 5-9-5z"/><path d="M3.5 12.5 12 17l8.5-4.5"/><path d="M3.5 16.5 12 21l8.5-4.5"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21v-8"/><circle cx="12" cy="7" r="3.4"/><circle cx="5.5" cy="13" r="2.6"/><circle cx="18.5" cy="13" r="2.6"/><path d="M12 15c0-2.6-2.6-3.4-4.4-3.6M12 15c0-2.6 2.6-3.4 4.4-3.6"/></symbol>
+    <symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 20s-7-4.2-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.8-7 9-7 9z"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.6"/><path d="M10 2.5v3M14 2.5v3M10 18.5v3M14 18.5v3M2.5 10h3M2.5 14h3M18.5 10h3M18.5 14h3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.4 4.4 0 0 1-.6-8.8 5.6 5.6 0 0 1 11-.4A4 4 0 0 1 17 18z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6L21 7H7"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="16.5" cy="19.5" r="1.5"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5M4.5 10v8M9.5 10v8M14.5 10v8M19.5 10v8M3 18.5h18"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M4 19a13 13 0 0 1 16 0" opacity=".01"/><path d="M12 19.5v-6M12 13.5 8 8h8z"/><path d="M5.5 5.5a9.5 9.5 0 0 1 13 0M8 8a6 6 0 0 1 8 0" transform="translate(0 -1)"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 3.5H11l9.5 9.5-7.5 7.5L3.5 11z"/><circle cx="8" cy="8" r="1.4"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6h11v10h-11zM13.5 9h4.5l3.5 3.5V16h-8"/><circle cx="6.5" cy="17.8" r="1.8"/><circle cx="17" cy="17.8" r="1.8"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 2.5a9 9 0 0 1 6.5 6.5H15z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 16c-1-4 0-9 4.5-12.5C20 7 21 12 17 13l-5 3z" transform="rotate(8 12 12)"/><path d="M9 15l-3.5 1L7 12.5M12 16l-1 3.5L14.5 18"/><circle cx="15" cy="8.6" r="1.3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21M6 6l3.2 3.2M14.8 14.8 18 18M18 6l-3.2 3.2M9.2 14.8 6 18"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20V9l6 3.5V9l6 3.5V5h6v15z"/><path d="M17.5 16.5h1.5M13 16.5h1.5M8.5 16.5H10"/></symbol>
+    <symbol id="i-boxes" viewBox="0 0 24 24"><rect x="4" y="12.5" width="7" height="7" rx="1"/><rect x="13" y="12.5" width="7" height="7" rx="1"/><rect x="8.5" y="4.5" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M8 5v14M16 5v14M3.5 9.5H8M3.5 14.5H8M16 9.5h4.5M16 14.5h4.5"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12L16 12h5"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="10" r="5.6"/><path d="M9.5 14.6 8 21l4-2 4 2-1.5-6.4"/><path d="M12 7.4l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2-1.4-1.4 2-.3z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c0-3.2 2.4-5.2 5.5-5.2s5.5 2 5.5 5.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M16.5 14.6c2.6.3 4.2 2.1 4.2 4.9"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h5.5L11 21.5l8-11h-5.5z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v6a5 5 0 0 1-10 0z"/><path d="M7 5.5H3.5V8A3.5 3.5 0 0 0 7 11.4M17 5.5h3.5V8A3.5 3.5 0 0 1 17 11.4"/><path d="M12 15v3.5M8.5 21h7M9.5 18.5h5"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2.5 7.5 7 5.5l5 2 4.5-2 5 2.2V15l-4 4-5.5-5"/><path d="M12 7.5 8.5 11a1.8 1.8 0 0 0 2.6 2.5l1.4-1.3 4.5 4.2"/><path d="M2.5 7.5V14l3.5 3.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 6.8V12l3.6 2.4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9.5 12 4.5l9.5 5L12 14.5z"/><path d="M6.5 12v4.4c3.6 2.4 7.4 2.4 11 0V12M20 10.5v5"/></symbol>
+    <symbol id="i-report" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3.6"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-13.6 5.7M4 12a8 8 0 0 1 13.6-5.7"/><path d="M20 7v5h-5M4 17v-5h5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v6c0 4.5-3 7.7-7.5 9-4.5-1.3-7.5-4.5-7.5-9V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M7 17a5 5 0 1 1 5-9h6"/><path d="M15.5 5.5 18 8l-2.5 2.5"/><path d="M17 7a5 5 0 1 1-5 9H6"/><path d="M8.5 18.5 6 16l2.5-2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h4l1.5 4.5-2.3 1.7a13 13 0 0 0 6.1 6.1L16 13.5l4.5 1.5v4a1.8 1.8 0 0 1-2 1.8C10 20 4 14 3.2 5.5A1.8 1.8 0 0 1 5 3.5z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-4.8 4.6-4.8 12.4 0 17 4.8-4.6 4.8-12.4 0-17z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-6.8-6-6.8-11a6.8 6.8 0 0 1 13.6 0c0 5-6.8 11-6.8 11z"/><circle cx="12" cy="10.2" r="2.4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 8-4.5 4 4.5 4M15.5 8l4.5 4-4.5 4M13 5.5l-2.5 13"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15.5v-4M12.5 15.5V8M17 15.5v-6.5"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="6.5" rx="1.6"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="1.6"/><path d="M7 7.2h.01M7 16.7h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-apps" viewBox="0 0 24 24"><rect x="4" y="4" width="6.6" height="6.6" rx="1.4"/><rect x="13.4" y="4" width="6.6" height="6.6" rx="1.4"/><rect x="4" y="13.4" width="6.6" height="6.6" rx="1.4"/><rect x="13.4" y="13.4" width="6.6" height="6.6" rx="1.4"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="2.4"/><path d="M12 8V4.5M9 21h6"/><circle cx="9.4" cy="12.6" r=".9" fill="currentColor" stroke="none"/><circle cx="14.6" cy="12.6" r=".9" fill="currentColor" stroke="none"/><path d="M9.5 15.6h5"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><path d="M4 10v4h3l7 5V5l-7 5z"/><path d="M17.5 9a4.2 4.2 0 0 1 0 6M20 6.5a8 8 0 0 1 0 11"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v5c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 11v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 4.5c4-2 8 2 12 0V13c-4 2-8-2-12 0"/></symbol>
+    <symbol id="i-arrowup" viewBox="0 0 24 24"><path d="M12 20V5M5.5 11.5 12 5l6.5 6.5"/></symbol>
+  </defs>
+</svg>
+
+<div class="toolbar">
+  <button onclick="window.print()">⤓ &nbsp;Print / Save as PDF</button>
+  <div class="tip"><b>A4 · Landscape</b> — set Margins to <b>None</b> and turn <b>Background graphics ON</b> for a pixel-perfect PDF.</div>
+</div>
+
+<!-- ================================================================
+     01 — COVER
+================================================================ -->
+<section class="sheet dark cover">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="cover-grid">
+    <div class="cover-main">
+      <div class="brandline">
+        <svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4" opacity=".95"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>
+        <span class="lu">Level Up</span>
+      </div>
+      <h1>ELEVATE<span>PARTNERS</span></h1>
+      <div class="docket-tag">Executive Search Docket</div>
+      <div class="manifesto">
+        <div class="row"><span class="no">01</span><span class="tx">We are <b>reimagining</b> how executive search firms engage with clients and candidates.</span></div>
+        <div class="row"><span class="no">02</span><span class="tx">What worked before <b>isn't good enough.</b></span></div>
+        <div class="row"><span class="no">03</span><span class="tx">We are dedicated to <b>driving change.</b></span></div>
+      </div>
+    </div>
+    <div class="cover-side">
+      <div class="cover-steps">
+        <svg viewBox="0 0 300 260" preserveAspectRatio="xMidYMax meet">
+          <g fill="none" stroke="rgba(237,243,241,.28)" stroke-width="2">
+            <path d="M10 250h56v-44h56v-44h56v-44h56v-44h56"/>
+          </g>
+          <g fill="none" stroke="#C39A2B" stroke-width="3" stroke-linecap="round">
+            <path d="M10 250h56v-44h56v-44h56v-44h56v-44h46"/>
+          </g>
+          <g stroke="#2C9C6A" stroke-width="7" stroke-linecap="round" fill="none">
+            <path d="M258 96V30M236 52l22-22 22 22"/>
+          </g>
+          <circle cx="66" cy="250" r="5" fill="#C39A2B"/>
+          <circle cx="122" cy="206" r="5" fill="#C39A2B"/>
+          <circle cx="178" cy="162" r="5" fill="#C39A2B"/>
+          <circle cx="234" cy="118" r="5" fill="#C39A2B"/>
+        </svg>
+      </div>
+      <p class="cover-tagline">Elevating Leadership through <b>I</b>nnovation, <b>T</b>rust, and Relentless <b>P</b>ursuit of <b>E</b>xcellence.</p>
+      <div class="cover-visit">
+        <div class="k">Visit</div>
+        <div class="v">www.elevatesearchpartner.com</div>
+      </div>
+    </div>
+  </div>
+  <aside class="rail" style="border-right-color:rgba(237,243,241,.22)">
+    <span class="num">01</span>
+    <b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Cover</span>
+  </aside>
+</section>
+
+<!-- ================================================================
+     02 — WE ARE
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">02</span>
+    <b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">We Are</span>
+  </aside>
+  <div class="page-body">
+    <div class="s2-cols">
+      <div class="s2-left">
+        <div class="eyebrow">We Are</div>
+        <h2 class="levelup"><b>Level-Up</b><br>with Elevate</h2>
+        <div class="s2-quoteRule"></div>
+        <p class="s2-para">Our dependable and exclusive process of cutting-edge Executive search. Experience <span class="hl">reduced bias</span>, <span class="hl">enhanced objectivity</span>, and unparalleled <span class="hl">Transparency</span> when we connect you with candidates whom you never knew and were looking to work with you.</p>
+        <p class="s2-para">We are committed to finding <span class="hl">transformational leaders</span> who deliver exceptional results. Level up with Elevate whether you're expanding into new markets, strengthening your C-Suite, recession proofing your business, or filling the void by retirees.</p>
+      </div>
+      <div class="s2-right">
+        <h2>The Elevate <em>Advantage</em></h2>
+        <div class="adv-wrap">
+          <div class="adv-spine"></div>
+          <div class="adv-hub">
+            <svg class="hi" viewBox="0 0 24 24"><use href="#i-handshake" class="ic" style="stroke:currentColor;fill:none"/></svg>
+            <div class="ht">Trusted Partner to Level-Up Growth</div>
+          </div>
+          <div class="adv-card l"><span class="cn">A1</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Expertise to Serve <b>14</b> Industries</div></div>
+          <div class="adv-gap"></div>
+          <div class="adv-card r"><span class="cn">A2</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div><div class="tx">Have a reputation of exceeding expectations for On&nbsp;Time delivery with High Quality</div></div>
+          <div class="adv-card l"><span class="cn">A3</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Strong Capability with Start-up mindset</div></div>
+          <div class="adv-gap"></div>
+          <div class="adv-card r"><span class="cn">A4</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div><div class="tx">Strong Relationship with Executives across Industries</div></div>
+          <div class="adv-card l"><span class="cn">A5</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div><div class="tx">Ability to ramp up resources in short timelines</div></div>
+          <div class="adv-gap"></div>
+          <div class="adv-card r"><span class="cn">A6</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div><div class="tx">Successfully delivered over <b>30</b> Key Leadership Positions</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     03 — SOLUTIONS
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">03</span>
+    <b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Solutions</span>
+  </aside>
+  <div class="page-body">
+    <header class="head">
+      <div>
+        <div class="eyebrow">Solutions</div>
+        <h1 class="title">A full spectrum of leadership solutions</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">8<em>+8</em></span><span class="t">Solutions ·<br>Functions</span></span></div>
+    </header>
+    <div class="s3-cols">
+      <div class="sol-grid">
+        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div><div class="tx">Executive Search</div><span class="sub">Board &amp; C-suite mandates</span></div></div>
+        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div><div><div class="tx">Executive Assessment</div><span class="sub">Objective leadership evaluation</span></div></div>
+        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-radar"/></svg></div><div><div class="tx">Market Intelligence</div><span class="sub">Talent &amp; compensation insight</span></div></div>
+        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-compass"/></svg></div><div><div class="tx">Discovering Leaders</div><span class="sub">Mapping tomorrow's executives</span></div></div>
+        <div class="sol"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bridge"/></svg></div><div><div class="tx">Career Transition Services</div><span class="sub">Guided executive movement</span></div></div>
+        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div><div><div class="tx">Senior &amp; Mid-Level Hiring</div><span class="sub">Depth beyond the C-suite</span></div></div>
+        <div class="sol"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tree"/></svg></div><div><div class="tx">Succession Planning</div><span class="sub">Leadership continuity, secured</span></div></div>
+        <div class="sol dei"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-hands"/></svg></div><div><div class="tx">Diversity, Equity &amp; Inclusion</div><span class="sub">Built into every search</span></div></div>
+      </div>
+      <div class="fn-panel">
+        <h3>Functions</h3>
+        <div class="fn-sub">Our functions — leadership chairs we fill</div>
+        <div class="fn"><span class="no">01</span><span class="tx">Chief Executive Officers</span></div>
+        <div class="fn"><span class="no">02</span><span class="tx">Marketing, Sales, Strategy officers</span></div>
+        <div class="fn"><span class="no">03</span><span class="tx">Human Resources officers</span></div>
+        <div class="fn"><span class="no">04</span><span class="tx">Digital officers</span></div>
+        <div class="fn"><span class="no">05</span><span class="tx">Financial Officers</span></div>
+        <div class="fn"><span class="no">06</span><span class="tx">Supply Chain &amp; Operations Officers</span></div>
+        <div class="fn"><span class="no">07</span><span class="tx">Legal, Regulatory &amp; Compliance</span></div>
+        <div class="fn"><span class="no">08</span><span class="tx">Technology &amp; Product officers</span></div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     04 — INDUSTRIES
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">04</span>
+    <b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Industries</span>
+  </aside>
+  <div class="page-body">
+    <header class="head">
+      <div>
+        <div class="eyebrow">Industries</div>
+        <h1 class="title">Fourteen sectors. One standard.</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">14</span><span class="t">Industries<br>Served</span></span></div>
+    </header>
+    <div class="ind-grid">
+      <div class="ind"><span class="code">01</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chip"/></svg></div><div class="tx">Technology Services</div></div>
+      <div class="ind"><span class="code">02</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cloud"/></svg></div><div class="tx">SAAS — Crypto to Cloud</div></div>
+      <div class="ind"><span class="code">03</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cart"/></svg></div><div class="tx">Internet E-Commerce</div></div>
+      <div class="ind"><span class="code">04</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bank"/></svg></div><div class="tx">Banking, FinTech</div></div>
+      <div class="ind"><span class="code">05</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-signal"/></svg></div><div class="tx">Telecom</div></div>
+      <div class="ind"><span class="code">06</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tag"/></svg></div><div class="tx">Retail</div></div>
+      <div class="ind"><span class="code">07</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-truck"/></svg></div><div class="tx">Logistics</div></div>
+      <div class="ind"><span class="code">08</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pie"/></svg></div><div class="tx">Private Equity</div></div>
+      <div class="ind"><span class="code">09</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Start-Up &amp; Scale-Ups</div></div>
+      <div class="ind"><span class="code">10</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div><div class="tx">Venture Capital</div></div>
+      <div class="ind"><span class="code">11</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Industrial</div></div>
+      <div class="ind"><span class="code">12</span><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-boxes"/></svg></div><div class="tx">Supply Chain &amp; Operations</div></div>
+      <div class="ind"><span class="code">13</span><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-film"/></svg></div><div class="tx">Media &amp; Entertainment</div></div>
+      <div class="ind"><span class="code">14</span><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pulse"/></svg></div><div class="tx">Health Care &amp; Life Sciences</div></div>
+    </div>
+    <div class="ind-note">
+      <svg class="mk" viewBox="0 0 24 24" style="color:#C39A2B"><use href="#i-arrowup" class="ic"/></svg>
+      <p class="q">Our expertise transforms <b>E</b>xecutive <b>S</b>earch, <b>L</b>eadership <b>D</b>evelopment, and <b>T</b>alent <b>S</b>trategy in driving <b>S</b>uccess and <b>I</b>nnovation across industries.</p>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     05 — SUCCESSFUL ASSIGNMENTS
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">05</span>
+    <b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Track Record</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:4mm">
+      <div>
+        <div class="eyebrow">Track Record</div>
+        <h1 class="title">Successful Assignments</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">29</span><span class="t">Leadership<br>Mandates</span></span></div>
+    </header>
+    <div class="tr-grid">
+      <div class="tr"><span class="no">1</span><div class="role">Chief Technology Officer<span class="org">Leading fintech company in India</span></div></div>
+      <div class="tr"><span class="no">2</span><div class="role">Country Head India<span class="org">US based AI/ML company</span></div></div>
+      <div class="tr"><span class="no">3</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing media group in India</span></div></div>
+      <div class="tr"><span class="no">4</span><div class="role">Chief Product Officer<span class="org">Singapore based leading fintech company</span></div></div>
+      <div class="tr"><span class="no">5</span><div class="role">Chief Revenue Officer<span class="org">Leading Edtech company in India</span></div></div>
+      <div class="tr"><span class="no">6</span><div class="role">Head of Corporate Development &amp; CFO<span class="org">Fastest growing media group</span></div></div>
+      <div class="tr"><span class="no">7</span><div class="role">Chief Marketing Officer<span class="org">Leading mobile company in China</span></div></div>
+      <div class="tr"><span class="no">8</span><div class="role">Chief Executive Officer<span class="org">Leading mobile company in China</span></div></div>
+      <div class="tr"><span class="no">9</span><div class="role">VP/SVP/Director Technology<span class="org">Top US based Investment banking company</span></div></div>
+      <div class="tr"><span class="no">10</span><div class="role">Chief Business Officer<span class="org">Leading fintech company in India</span></div></div>
+      <div class="tr"><span class="no">11</span><div class="role">Product Leader<span class="org">US based 2nd largest management consulting firm</span></div></div>
+      <div class="tr"><span class="no">12</span><div class="role">Head of Payments<span class="org">India's top emerging payments platform</span></div></div>
+      <div class="tr"><span class="no">13</span><div class="role">Head of Product<span class="org">Leading Edtech company in India</span></div></div>
+      <div class="tr"><span class="no">14</span><div class="role">Chief Architect<span class="org">Leading payment company</span></div></div>
+      <div class="tr"><span class="no">15</span><div class="role">Head of Design<span class="org">Leading Edtech company in India</span></div></div>
+      <div class="tr"><span class="no">16</span><div class="role">AVP/VP Technology<span class="org">Large E-commerce company</span></div></div>
+      <div class="tr"><span class="no">17</span><div class="role">Principal Architect<span class="org">Japan based leading SaaS company</span></div></div>
+      <div class="tr"><span class="no">18</span><div class="role">Director of Product<span class="org">Leading gaming company in India</span></div></div>
+      <div class="tr"><span class="no">19</span><div class="role">Head of Analytics<span class="org">US based Fortune 500 company</span></div></div>
+      <div class="tr"><span class="no">20</span><div class="role">Director Data &amp; Analytics<span class="org">US based fast food corporation</span></div></div>
+      <div class="tr"><span class="no">21</span><div class="role">Head of Sales<span class="org">Fastest growing media group in India</span></div></div>
+      <div class="tr"><span class="no">22</span><div class="role">Head of Data<span class="org">Large E-commerce company</span></div></div>
+      <div class="tr"><span class="no">23</span><div class="role">Head Sales and Operations<span class="org">Leading Edtech company in India</span></div></div>
+      <div class="tr"><span class="no">24</span><div class="role">Head Risk and Compliance<span class="org">Leading fintech company in India</span></div></div>
+      <div class="tr"><span class="no">25</span><div class="role">Head of Design<span class="org">Largest Retail company in India</span></div></div>
+      <div class="tr"><span class="no">26</span><div class="role">Head of DevOps<span class="org">Largest Retail company in India</span></div></div>
+      <div class="tr"><span class="no">27</span><div class="role">Head of Operations<span class="org">Largest Tyre manufacturer in India</span></div></div>
+      <div class="tr"><span class="no">28</span><div class="role">Head of Service Experience (After Sales)<span class="org">Largest Tyre manufacturer in India</span></div></div>
+      <div class="tr"><span class="no">29</span><div class="role">Head of Cloud &amp; Infrastructure<span class="org">&nbsp;</span></div></div>
+      <div class="tr" style="background:var(--ink);border-color:var(--ink);align-items:center">
+        <div class="role" style="color:#EDF3F1">Every chair filled, on time<span class="org" style="color:var(--brass)">…and counting</span></div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     06 — METHODOLOGY + LEADERSHIP
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">06</span>
+    <b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Methodology</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:2mm">
+      <div>
+        <div class="eyebrow">Methodology</div>
+        <h1 class="title">Five steps up</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">05</span><span class="t">Step Search<br>Process</span></span></div>
+    </header>
+    <div class="steps">
+      <div class="step h1x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div class="sn">Step<b>01</b></div><div class="st">Research, Analyze, and Understand</div></div>
+      <div class="step h2x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div><div class="sn">Step<b>02</b></div><div class="st">Assessment</div></div>
+      <div class="step h3x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sync"/></svg></div><div class="sn">Step<b>03</b></div><div class="st">Sync-up with Stakeholders</div></div>
+      <div class="step h4x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div><div class="sn">Step<b>04</b></div><div class="st">Support</div></div>
+      <div class="step h5x"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-loop"/></svg></div><div class="sn">Step<b>05</b></div><div class="st">Continuous Collaboration</div></div>
+    </div>
+    <div class="s6-lead">
+      <div class="s6-founder">
+        <div class="ava">ST</div>
+        <div class="nm">Sunil Kumar Tiwari</div>
+        <div class="rl">Founder</div>
+        <div class="of">Elevate Partners</div>
+      </div>
+      <div class="s6-bio">
+        <h2>Leadership — the practice behind the <em>practice</em></h2>
+        <p><b>Sunil Kumar Tiwari</b> is the <b>Founder</b> of Elevate Partners. He heads a cluster of industry practices which include Technology — Crypto to Cloud Computing to SAAS solutions, Start-ups and scale-ups, Technology Services, Banking, Fintech &amp; Financial Services, Retail, Media, and many other practices.</p>
+        <p>He has an established reputation in the market as a multi-domain consultant, with deep expertise in the Technology vertical. Prior to joining Elevate Partners, he has worked in leadership roles with Manpower Group India, Pylon Management Consulting and First Meridian and led their leadership hiring practices.</p>
+        <div class="s6-firms">
+          <span class="k">Earlier chapters</span>
+          <span class="chip">Manpower Group India</span>
+          <span class="chip">Pylon Management Consulting</span>
+          <span class="chip">First Meridian</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     07 — CONNECT & ELEVATE
+================================================================ -->
+<section class="sheet dark">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">07</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Connect</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:8mm">
+      <div>
+        <div class="eyebrow">At Elevate</div>
+        <h1 class="title" style="color:#F4F8F6">Connect &amp; Elevate</h1>
+      </div>
+    </header>
+    <div class="s7-cols">
+      <div class="s7-left">
+        <p class="bigsay">Your unique <b>Culture</b> and need to find <b>Exceptional Leaders</b> are Prioritized.</p>
+        <div class="s7-vals">
+          <span class="lead-in">Committed to</span>
+          <span class="chip">Diversity</span>
+          <span class="chip">Equity</span>
+          <span class="chip">Inclusion</span>
+          <span class="chip">Transparency</span>
+          <span class="chip">Equal Career Opportunities</span>
+        </div>
+      </div>
+      <div class="s7-card">
+        <div class="k">Connect &amp; Elevate</div>
+        <div class="nm">Sunil Kumar Tiwari</div>
+        <div class="rl">Director</div>
+        <div class="s7-rows">
+          <div class="s7-row"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-phone"/></svg></div><div class="tx"><small>Call</small>+91 9902 438722</div></div>
+          <div class="s7-row"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-mail"/></svg></div><div class="tx"><small>Write</small>sunil.tiwari@elevatesearchpartner.com</div></div>
+          <div class="s7-row"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-globe"/></svg></div><div class="tx"><small>Visit</small>https://www.elevatesearchpartner.com/</div></div>
+          <div class="s7-row"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-pin"/></svg></div><div class="tx"><small>Meet</small>#46/4, Novel Tech Park, 3 Garvebhavipalya, Kudlu Gate, Bangalore-560067</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     08 — INTRODUCING ELEVATE PARTNERS
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">08</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b><b></b>
+    <span class="lab">The Firm</span>
+  </aside>
+  <div class="page-body">
+    <header class="head">
+      <div>
+        <div class="eyebrow">The Firm</div>
+        <h1 class="title">Introducing Elevate Partners</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">20<em>+</em></span><span class="t">Years in the<br>HR Domain</span></span></div>
+    </header>
+    <div class="s8-grid">
+      <div class="s8-card"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div class="cap">Who we are</div><p>Elevate Partners is an <b>executive search firm</b> and we specialize in recruiting <b>top-class talent</b> for various industries.</p></div>
+      <div class="s8-card"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-cap"/></svg></div><div class="cap">Our pedigree</div><p>The organization is backed and promoted by <b>alumni of premier institutes</b> of Science &amp; Technology.</p></div>
+      <div class="s8-card"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div class="cap">Our experience</div><p>The team is having over <b>20+ years</b> of extensive experience in HR Domain with expertise in Recruitment for <b>Mid-level requirements to Executive Search</b>, Career Counselling and Industry Mapping.</p></div>
+      <div class="s8-card"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-report"/></svg></div><div class="cap">Beyond search</div><p>We also assist with <b>Talent landscape reports</b>, <b>Compensation benchmarking</b> and <b>Salary guides</b> which will help you navigate through your decision making process.</p></div>
+    </div>
+    <div class="s8-recap">
+      <h3>The Elevate Advantage</h3>
+      <div class="hub-line">Trusted Partner to Level-Up Growth</div>
+      <div class="s8-pills">
+        <div class="s8-pill"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Expertise to Serve <b>14 Industries</b></div></div>
+        <div class="s8-pill"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div><div class="tx">Reputation of exceeding expectations for <b>On Time delivery with High Quality</b></div></div>
+        <div class="s8-pill"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Strong Capability with <b>Start-up mindset</b></div></div>
+        <div class="s8-pill"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div><div class="tx">Strong Relationship with <b>Executives across Industries</b></div></div>
+        <div class="s8-pill"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div><div class="tx">Ability to <b>ramp up resources</b> in short timelines</div></div>
+        <div class="s8-pill"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div><div class="tx">Successfully delivered over <b>30 Key Leadership Positions</b></div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     09 — TECHNOLOGY, PRODUCT & ANALYTICS
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">09</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b><b></b>
+    <span class="lab">Capabilities</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:4mm">
+      <div>
+        <div class="eyebrow">Hiring Capabilities</div>
+        <h1 class="title">Technology, Product &amp; Analytics</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">20</span><span class="t">Marquee<br>Mandates</span></span></div>
+    </header>
+    <div class="cap-strip">
+      <div class="k"><svg style="width:4mm;height:4mm" viewBox="0 0 24 24"><use href="#i-code" class="ic"/></svg>Roles we place — across SaaS, E-commerce, Fintech, Edtech, Banking, Retail &amp; Gaming companies</div>
+      <div class="chips">
+        <span class="chip">Backend</span><span class="chip">Frontend (UI)</span><span class="chip">Full stack</span><span class="chip">MEAN stack</span><span class="chip">MERN stack</span><span class="chip">Data Engineer</span><span class="chip">Data Scientist</span><span class="chip">QA / SDET</span><span class="chip">DevOps / SRE</span><span class="chip">Architect</span><span class="chip">Product Managers</span>
+      </div>
+    </div>
+    <div class="mand-cols">
+      <div>
+        <div class="mand"><span class="tick"></span><div class="role">Director of Engineering <span>· Israel based leading enterprise software company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head — Automotive Electronics, Controls &amp; Software Engineering <span>· US based leading Automotive OEM</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of Engineering <span>· Largest Edtech company in the world</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Director Data &amp; Analytics <span>· US based fast food corporation</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">VP — Big Data <span>· Indian conglomerate company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of DevOps <span>· Largest Retail company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of Analytics <span>· US based Fortune 500 company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Chief Product Officer <span>· Singapore based leading fintech company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Product Leader <span>· US based 2nd largest management consulting firm</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of Product <span>· Leading Edtech company in India</span></div></div>
+      </div>
+      <div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of Engineering <span>· Largest Edtech company in the world</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of Design <span>· Leading Edtech company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Director of Product <span>· Leading gaming company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Enterprise Architect <span>· Largest Retail company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Enterprise Architect — Automation &amp; Control solutions <span>· US based engineering multinational conglomerate</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Principal Data Scientist <span>· Leading Edtech company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Principal Data Engineer <span>· Leading Edtech company in India</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Principal Architect <span>· Japan based leading E-commerce company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Engineering Manager <span>· US based leading SaaS company</span></div></div>
+        <div class="mand"><span class="tick"></span><div class="role">Head of QA <span>· Leading Edtech company in India</span></div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     10 — TECHNOLOGY LANDSCAPE
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">10</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b><b></b>
+    <span class="lab">Landscape</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:4mm">
+      <div>
+        <div class="eyebrow">Coverage Map</div>
+        <h1 class="title">Our Technology Landscape</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">05</span><span class="t">Practice<br>Clusters</span></span></div>
+    </header>
+    <div class="tl-cols">
+      <div class="tl-col">
+        <div class="tl-panel grow">
+          <div class="tl-head"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-code"/></svg></div><div class="tx">Application Development</div><span class="ct">13 tracks</span></div>
+          <div class="tl-chips">
+            <span class="chip">Backend — Corejava / Python / NodeJS / .NET / PHP / Golang / ROR</span>
+            <span class="chip">Front-End — ReactJS / Redux / AngularJS / JS / CSS / HTML</span>
+            <span class="chip">Full-Stack Developer (Backend &amp; Front End)</span>
+            <span class="chip">Technical Architect</span>
+            <span class="chip">Engineering / Tech Manager</span>
+            <span class="chip">Delivery / Project Managers</span>
+            <span class="chip">Database Developer (PLSQL / MSSQL)</span>
+            <span class="chip">DevOps Engineers</span>
+            <span class="chip">SDET (Software Development Engineers in Testing)</span>
+            <span class="chip">Scrum Masters</span>
+            <span class="chip">Android (Java &amp; Kotlin)</span>
+            <span class="chip">iOS</span>
+            <span class="chip">VP Engineering / CTO</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-panel grow">
+          <div class="tl-head"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></div><div class="tx">IT Infrastructure / Shared Services</div><span class="ct">10 tracks</span></div>
+          <div class="tl-chips">
+            <span class="chip">Network Engineers</span>
+            <span class="chip">Security Engineer (Application / Network)</span>
+            <span class="chip">Service Delivery Managers</span>
+            <span class="chip">Site Reliability Engineers</span>
+            <span class="chip">Database Engineers (DBA)</span>
+            <span class="chip">Network Architects</span>
+            <span class="chip">Cloud Engineers</span>
+            <span class="chip">System Administrators (Windows / Linux / Unix)</span>
+            <span class="chip">DevOps Head</span>
+            <span class="chip">IT Infra Head</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-panel">
+          <div class="tl-head"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chart"/></svg></div><div class="tx">Data &amp; Analytics</div><span class="ct">5 tracks</span></div>
+          <div class="tl-chips">
+            <span class="chip">Data Engineers</span>
+            <span class="chip">Data Scientists</span>
+            <span class="chip">BI Developers</span>
+            <span class="chip">Big Data Developers</span>
+            <span class="chip">Big Data Architects</span>
+          </div>
+        </div>
+        <div class="tl-panel">
+          <div class="tl-head"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-apps"/></svg></div><div class="tx">Enterprise Applications</div><span class="ct">4 tracks</span></div>
+          <div class="tl-chips">
+            <span class="chip">SAP</span><span class="chip">Oracle</span><span class="chip">SalesForce</span><span class="chip">Workday</span>
+          </div>
+        </div>
+        <div class="tl-panel grow">
+          <div class="tl-head"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bot"/></svg></div><div class="tx">RPA</div><span class="ct">3 tracks</span></div>
+          <div class="tl-chips">
+            <span class="chip">UiPath</span><span class="chip">Blueprism</span><span class="chip">Automation Anywhere</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     11 — SALES & MARKETING
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">11</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b><b></b>
+    <span class="lab">Capabilities</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:4mm">
+      <div>
+        <div class="eyebrow">Hiring Capabilities</div>
+        <h1 class="title">Sales &amp; Marketing</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">11</span><span class="t">Marquee<br>Mandates</span></span></div>
+    </header>
+    <div class="cap-strip">
+      <div class="k"><svg style="width:4mm;height:4mm" viewBox="0 0 24 24"><use href="#i-mega" class="ic"/></svg>Sales Managers / Inside Sales — placed across many industries</div>
+      <div class="chips">
+        <span class="chip">SaaS</span><span class="chip">Cloud</span><span class="chip">ERP</span><span class="chip">Laptop manufacturers</span><span class="chip">Fintech</span><span class="chip">Edtech</span><span class="chip">+ many other industries</span>
+      </div>
+    </div>
+    <div class="mand-grid">
+      <div class="mand-card"><div class="role">Sales Director</div><div class="org">US based engineering multinational conglomerate company</div></div>
+      <div class="mand-card"><div class="role">Chief Revenue Officer</div><div class="org">Fastest growing Media Group in India</div></div>
+      <div class="mand-card"><div class="role">Chief Revenue Officer</div><div class="org">Fastest growing Edtech company in India</div></div>
+      <div class="mand-card"><div class="role">Head of Sales</div><div class="org">Leading Edtech company in India</div></div>
+      <div class="mand-card"><div class="role">VP Sales</div><div class="org">India's largest Real Estate Firm</div></div>
+      <div class="mand-card"><div class="role">Inside Sales Head</div><div class="org">Largest Laptop manufacturer</div></div>
+      <div class="mand-card"><div class="role">Enterprise Sales</div><div class="org">Leading ERP Company in India</div></div>
+      <div class="mand-card"><div class="role">Head Sales and Operations</div><div class="org">Leading Edtech Company in India</div></div>
+      <div class="mand-card"><div class="role">Chief Marketing Officer</div><div class="org">Leading Mobile Company based in China</div></div>
+      <div class="mand-card"><div class="role">Digital Marketing Head</div><div class="org">Leading Mobile Company based in China</div></div>
+      <div class="mand-card"><div class="role">Head of Sales</div><div class="org">Fastest growing Media Group in India</div></div>
+      <div class="mand-card" style="background:var(--ink);border-color:var(--ink);border-left-color:var(--brass)">
+        <div class="role" style="color:#EDF3F1">Revenue leadership, delivered</div><div class="org" style="color:var(--brass)">from inside sales to the CRO chair</div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     12 — F&A, FP&A & OTHERS
+================================================================ -->
+<section class="sheet">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">12</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b><b></b>
+    <span class="lab">Capabilities</span>
+  </aside>
+  <div class="page-body">
+    <header class="head" style="margin-bottom:4mm">
+      <div>
+        <div class="eyebrow">Hiring Capabilities</div>
+        <h1 class="title">F&amp;A, FP&amp;A &amp; Others</h1>
+      </div>
+      <div class="aside-stat"><span class="stat"><span class="n">13</span><span class="t">Marquee<br>Mandates</span></span></div>
+    </header>
+    <div class="cap-strip">
+      <div class="k"><svg style="width:4mm;height:4mm" viewBox="0 0 24 24"><use href="#i-coins" class="ic"/></svg>Functions we cover — for many SaaS, E-commerce, Fintech, Edtech, Banking, Retail &amp; Gaming companies</div>
+      <div class="chips">
+        <span class="chip">F&amp;A</span><span class="chip">FP&amp;A</span><span class="chip">Audit</span><span class="chip">Taxation</span><span class="chip">Risk &amp; Compliance</span><span class="chip">Investor Relations</span>
+      </div>
+    </div>
+    <div class="mand-grid">
+      <div class="mand-card"><div class="role">Head of Corporate Development &amp; CFO</div><div class="org">Fastest growing Media Group in India</div></div>
+      <div class="mand-card"><div class="role">F&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
+      <div class="mand-card"><div class="role">FP&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
+      <div class="mand-card"><div class="role">Chief Executive Officer</div><div class="org">Leading Mobile Company based in China</div></div>
+      <div class="mand-card"><div class="role">Service Delivery Leader</div><div class="org">Largest Healthcare Provider in the world</div></div>
+      <div class="mand-card"><div class="role">Head of Operations</div><div class="org">Largest Tyre Company in India</div></div>
+      <div class="mand-card"><div class="role">Head of Category</div><div class="org">Largest Tyre Company in India</div></div>
+      <div class="mand-card"><div class="role">Chief Business Officer</div><div class="org">Leading Fintech company in India</div></div>
+      <div class="mand-card"><div class="role">HR Head</div><div class="org">Leading Fintech company based in Singapore</div></div>
+      <div class="mand-card"><div class="role">HR Head</div><div class="org">US based Automatic Transition Company</div></div>
+      <div class="mand-card"><div class="role">Head Procurement</div><div class="org">US based Automatic Transition Company</div></div>
+      <div class="mand-card"><div class="role">Business Head</div><div class="org">Leading Fintech company in India</div></div>
+      <div class="mand-card"><div class="role">Head Risk and Compliance</div><div class="org">Leading Fintech company in India</div></div>
+      <div class="mand-card" style="background:var(--ink);border-color:var(--ink);border-left-color:var(--brass)">
+        <div class="role" style="color:#EDF3F1">From the back office to the boardroom</div><div class="org" style="color:var(--brass)">finance, people &amp; operations leadership</div>
+      </div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wm"><svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>ELEVATE&nbsp;<span>PARTNERS</span></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+  </footer>
+</section>
+
+<!-- ================================================================
+     13 — THANK YOU
+================================================================ -->
+<section class="sheet dark">
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <aside class="rail">
+    <span class="num">13</span>
+    <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b class="on"></b>
+    <span class="lab">Thank You</span>
+  </aside>
+  <div class="s13-body">
+    <svg class="mark" viewBox="0 0 24 24"><path class="u" d="M6 4v9a6 6 0 0 0 12 0V4"/><path class="a" d="M12 20V9M8.5 12.5 12 9l3.5 3.5"/></svg>
+    <h1>Thank You</h1>
+    <p class="sub">Let's <b>Level Up</b> your leadership, together.</p>
+    <div class="rulez"></div>
+    <div class="site">www.elevatesearchpartner.com</div>
+    <div class="cta">
+      <span><b>Sunil Kumar Tiwari</b> · Director</span>
+      <span><b>+91 9902 438722</b></span>
+      <span><b>sunil.tiwari@elevatesearchpartner.com</b></span>
+    </div>
+  </div>
+</section>

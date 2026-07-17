@@ -149,6 +149,14 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .chip.gold{background:var(--brass);border-color:var(--brass);color:var(--ink)}
 
 /* ============================================================ 01 COVER */
+/* Artwork slot: if cover.jpg exists next to this file it becomes the
+   entire slide (full-height, centered); otherwise the designed cover shows. */
+.cover .cover-img{display:none}
+.cover.hasimg .cover-img{
+  display:block;position:absolute;top:5mm;left:50%;translate:-50% 0;
+  height:200mm;max-width:287mm;object-fit:contain;z-index:1;
+}
+.cover.hasimg .cover-grid{display:none}
 .cover .page-body{inset:5mm;padding:0}
 .cover-grid{position:absolute;inset:5mm;display:grid;grid-template-columns:1fr 96mm}
 .cover-main{padding:14mm 12mm 14mm 16mm;display:flex;flex-direction:column;position:relative}
@@ -521,6 +529,8 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <section class="sheet dark cover">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
+  <img class="cover-img" src="cover.jpg" alt="Elevate Partners cover artwork"
+       onload="this.closest('.sheet').classList.add('hasimg')">
   <div class="cover-grid">
     <div class="cover-main">
       <div class="brandline">

@@ -20,6 +20,13 @@
   --mute:     #5C7370;   /* secondary text               */
   --sans: 'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;
   --serif: Georgia,'Times New Roman',serif;
+  /* vibrant client palette — dark red lead + vivid shades */
+  --red:  #B02428;   /* dark red (lead accent) */
+  --red2: #8E1B20;   /* deeper crimson         */
+  --org:  #D9601A;   /* vermilion orange       */
+  --azu:  #1F6FB2;   /* azure blue             */
+  --plum: #7A3B8F;   /* plum purple            */
+  --mag:  #C2185B;   /* magenta                */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--paper)}
@@ -445,6 +452,44 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .s13-body .cta{margin-top:9mm;display:flex;gap:8mm;font-size:3.1mm;color:rgba(237,243,241,.75);letter-spacing:.06em}
 .s13-body .cta b{color:#EDF3F1}
 
+/* ============================================================ vibrant variant */
+.vib .eyebrow{color:var(--red)}
+.vib .eyebrow::before{background:var(--red)}
+.vib .stat .n{color:var(--red)}
+.vib .stat .n em{color:var(--org)}
+/* slide 2 */
+.vib .levelup b{color:var(--red)}
+.vib .s2-quoteRule{background:var(--red)}
+.vib .s2-para .hl{color:var(--red)}
+.vib .s2-right h2 em{color:var(--red)}
+.vib .adv-hub{background:var(--red2);border-color:var(--brass)}
+.vib .ntx b{color:var(--red)}
+/* shared vivid node colors */
+.vib .nod.c1,.vib .tnod.c1{background:var(--red)}
+.vib .nod.c2,.vib .tnod.c2{background:var(--org)}
+.vib .nod.c3,.vib .tnod.c3{background:var(--azu)}
+.vib .nod.c4,.vib .tnod.c4{background:var(--emerald)}
+.vib .nod.c5,.vib .tnod.c5{background:var(--brass);color:var(--ink)}
+.vib .nod.c6,.vib .tnod.c6{background:var(--plum)}
+.vib .tnod.c7{background:var(--mag)}
+/* slide 3 */
+.vib .tnod.dei{
+  background:var(--red2);color:#fff;
+  box-shadow:0 0 0 1.2mm var(--paper),0 0 0 1.8mm var(--red2),0 .8mm 2.4mm rgba(142,27,32,.3);
+}
+.vib .tlab .nm.gold{color:var(--red)}
+.vib .tcap b{color:var(--red)}
+.vib .fn-panel h3{color:var(--red)}
+.vib .fn .no{background:transparent}
+.vib .fn:nth-child(3) .no{background:var(--red);border-color:var(--red);color:#fff}
+.vib .fn:nth-child(4) .no{background:var(--org);border-color:var(--org);color:#fff}
+.vib .fn:nth-child(5) .no{background:var(--azu);border-color:var(--azu);color:#fff}
+.vib .fn:nth-child(6) .no{background:var(--emerald);border-color:var(--emerald);color:#fff}
+.vib .fn:nth-child(7) .no{background:var(--plum);border-color:var(--plum);color:#fff}
+.vib .fn:nth-child(8) .no{background:var(--mag);border-color:var(--mag);color:#fff}
+.vib .fn:nth-child(9) .no{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+.vib .fn:nth-child(10) .no{background:var(--red2);border-color:var(--red2);color:#fff}
+
 /* ============================================================ screen vs print */
 @media screen{
   body{background:#111C1B;padding:16mm 0 20mm}
@@ -579,7 +624,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      02 — WE ARE
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -610,12 +655,12 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
             <circle cx="69.5" cy="79" r="31" fill="none" stroke="#C6D4D0" stroke-width=".4" stroke-dasharray="1 2.2" opacity=".7"/>
             <!-- spokes -->
             <g stroke-width=".8" fill="none" opacity=".85">
-              <path d="M69.5 79 46 28"   stroke="#14464C" marker-end="url(#mdot)"/>
-              <path d="M69.5 79 93 28"   stroke="#2C9C6A" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 46 28"   stroke="#B02428" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 93 28"   stroke="#D9601A" marker-end="url(#mdot)"/>
               <path d="M69.5 79 17 79"   stroke="#2C9C6A" marker-end="url(#mdot)"/>
-              <path d="M69.5 79 122 79"  stroke="#C39A2B" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 122 79"  stroke="#1F6FB2" marker-end="url(#mdot)"/>
               <path d="M69.5 79 49 131"  stroke="#C39A2B" marker-end="url(#mdot)"/>
-              <path d="M69.5 79 90 131"  stroke="#14464C" marker-end="url(#mdot)"/>
+              <path d="M69.5 79 90 131"  stroke="#7A3B8F" marker-end="url(#mdot)"/>
             </g>
           </svg>
           <!-- hub -->
@@ -624,17 +669,17 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
             <div class="ht">Trusted Partner<br>to Level-Up<br>Growth</div>
           </div>
           <!-- satellites -->
-          <div class="nod"    style="left:46mm;top:28mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div>
+          <div class="nod c1" style="left:46mm;top:28mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div>
           <div class="ntx" style="left:24mm;width:44mm;top:5mm;text-align:center">Expertise to Serve <b>14</b> <span class="bb">Industries</span></div>
-          <div class="nod em" style="left:93mm;top:28mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div>
+          <div class="nod c2" style="left:93mm;top:28mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div>
           <div class="ntx" style="left:71mm;width:44mm;top:1mm;text-align:center">Have a reputation of exceeding expectations for <span class="bb">On Time delivery with High Quality</span></div>
-          <div class="nod em" style="left:17mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div>
+          <div class="nod c4" style="left:17mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div>
           <div class="ntx" style="left:0;width:34mm;top:90mm;text-align:center">Strong Capability with <span class="bb">Start-up mindset</span></div>
-          <div class="nod br" style="left:122mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div>
+          <div class="nod c3" style="left:122mm;top:79mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div>
           <div class="ntx" style="left:105mm;width:34mm;top:90mm;text-align:center">Strong Relationship with <span class="bb">Executives across Industries</span></div>
-          <div class="nod br" style="left:49mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+          <div class="nod c5" style="left:49mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
           <div class="ntx" style="left:0;width:41mm;top:141mm;text-align:right">Ability to <span class="bb">ramp up resources</span> in short timelines</div>
-          <div class="nod"    style="left:90mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div>
+          <div class="nod c6" style="left:90mm;top:131mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div>
           <div class="ntx" style="left:98mm;width:41mm;top:141mm">Successfully delivered over <b>30</b> <span class="bb">Key Leadership Positions</span></div>
         </div>
       </div>
@@ -649,7 +694,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      03 — SOLUTIONS
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -672,19 +717,19 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
                 fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round"/>
         </svg>
         <p class="tcap">Eight solutions.<br><b>One ascent.</b></p>
-        <div class="tnod"    style="left:56mm;top:140mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div>
+        <div class="tnod c1" style="left:56mm;top:140mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div>
         <div class="tlab L" style="left:0;width:46mm;top:135.5mm"><div class="nm">Executive Search</div><div class="sb">Board &amp; C-suite mandates</div></div>
-        <div class="tnod em" style="left:86mm;top:123mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div>
+        <div class="tnod c2" style="left:86mm;top:123mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div>
         <div class="tlab"   style="left:94mm;width:47mm;top:118.5mm"><div class="nm">Executive Assessment</div><div class="sb">Objective leadership evaluation</div></div>
-        <div class="tnod"    style="left:56mm;top:106mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-radar"/></svg></div>
+        <div class="tnod c3" style="left:56mm;top:106mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-radar"/></svg></div>
         <div class="tlab L" style="left:0;width:46mm;top:101.5mm"><div class="nm">Market Intelligence</div><div class="sb">Talent &amp; compensation insight</div></div>
-        <div class="tnod em" style="left:86mm;top:89mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-compass"/></svg></div>
+        <div class="tnod c4" style="left:86mm;top:89mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-compass"/></svg></div>
         <div class="tlab"   style="left:94mm;width:47mm;top:84.5mm"><div class="nm">Discovering Leaders</div><div class="sb">Mapping tomorrow's executives</div></div>
-        <div class="tnod"    style="left:56mm;top:72mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bridge"/></svg></div>
+        <div class="tnod c6" style="left:56mm;top:72mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bridge"/></svg></div>
         <div class="tlab L" style="left:0;width:46mm;top:67.5mm"><div class="nm">Career Transition Services</div><div class="sb">Guided executive movement</div></div>
-        <div class="tnod em" style="left:86mm;top:55mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div>
+        <div class="tnod c7" style="left:86mm;top:55mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-layers"/></svg></div>
         <div class="tlab"   style="left:94mm;width:47mm;top:50.5mm"><div class="nm">Senior &amp; Mid-Level Hiring</div><div class="sb">Depth beyond the C-suite</div></div>
-        <div class="tnod"    style="left:56mm;top:38mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tree"/></svg></div>
+        <div class="tnod c5" style="left:56mm;top:38mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-tree"/></svg></div>
         <div class="tlab L" style="left:0;width:46mm;top:33.5mm"><div class="nm">Succession Planning</div><div class="sb">Leadership continuity, secured</div></div>
         <svg class="tflag" style="left:86mm;top:12mm" viewBox="0 0 24 24"><use href="#i-flag" class="ic"/></svg>
         <div class="tnod dei" style="left:86mm;top:21mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-hands"/></svg></div>

@@ -316,39 +316,43 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .ind-note .mk{width:10mm;height:10mm;flex:none}
 
 /* ============================================================ 05 ASSIGNMENTS */
-.tr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.6mm;flex:1;align-content:stretch}
-.tr{
-  background:var(--card);border:.35mm solid var(--line);border-radius:2.2mm;
-  padding:2.2mm 2.8mm;display:flex;gap:2.6mm;align-items:flex-start;min-height:0;
-}
-.tr .no{
-  flex:none;width:6.6mm;height:6.6mm;border-radius:50%;margin-top:.4mm;
+/* four mandate strands — dashed rails with numbered stations */
+.trk-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:7mm;flex:1;align-content:start}
+.trk{position:relative}
+.trk::before{content:"";position:absolute;left:3.2mm;top:3mm;bottom:3mm;border-left:.5mm dashed #B9CBC6}
+.ti{position:relative;display:flex;gap:2.8mm;align-items:flex-start;padding:3.1mm 0;z-index:1}
+.ti .no{
+  flex:none;width:6.6mm;height:6.6mm;border-radius:50%;margin-top:.3mm;
   display:flex;align-items:center;justify-content:center;
-  font-size:2.55mm;font-weight:800;font-variant-numeric:tabular-nums;
-  background:var(--paper);border:.4mm solid var(--line);color:var(--pine);
+  font-size:2.5mm;font-weight:800;font-variant-numeric:tabular-nums;
+  color:#fff;background:var(--pine);box-shadow:0 0 0 1mm var(--paper);
 }
-.tr:nth-child(3n+1) .no{background:var(--ink);border-color:var(--ink);color:#EDF3F1}
-.tr:nth-child(3n+2) .no{background:transparent;border-color:var(--brass);color:var(--brasstxt)}
-.tr:nth-child(3n) .no{background:var(--emerald);border-color:var(--emerald);color:#fff}
-.tr .role{font-size:2.72mm;font-weight:700;line-height:1.24}
-.tr .org{display:block;font-size:2.6mm;font-weight:400;color:var(--mute);line-height:1.24;margin-top:.5mm}
+.vib .ti:nth-child(7n+1) .no{background:var(--red)}
+.vib .ti:nth-child(7n+2) .no{background:var(--org)}
+.vib .ti:nth-child(7n+3) .no{background:var(--azu)}
+.vib .ti:nth-child(7n+4) .no{background:var(--emerald)}
+.vib .ti:nth-child(7n+5) .no{background:var(--brass);color:var(--ink)}
+.vib .ti:nth-child(7n+6) .no{background:var(--plum)}
+.vib .ti:nth-child(7n) .no{background:var(--mag)}
+.ti .role{font-size:2.75mm;font-weight:700;line-height:1.25}
+.ti .org{display:block;font-size:2.6mm;font-weight:400;color:var(--mute);line-height:1.25;margin-top:.4mm}
+.trk-note{
+  margin-top:4mm;padding-left:9.4mm;
+  font-family:var(--serif);font-style:italic;font-size:3.5mm;color:var(--mute);line-height:1.45;
+}
+.trk-note b{font-family:var(--sans);font-style:normal;font-weight:800;color:var(--red)}
 
 /* ============================================================ 06 METHODOLOGY */
-.steps{position:relative;height:64mm;display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;align-items:end;margin-top:2mm}
-.step{position:relative;display:flex;flex-direction:column;border-radius:2.6mm 2.6mm 0 0;
-  background:var(--card);border:.35mm solid var(--line);border-bottom:1.2mm solid var(--brass);
-  padding:3.6mm 3.8mm;
-}
-.step .sn{font-size:2.6mm;letter-spacing:.3em;font-weight:700;color:var(--brasstxt);text-transform:uppercase}
-.step .sn b{font-size:6.4mm;letter-spacing:0;color:var(--pine);display:block;line-height:1.05;margin-top:.8mm}
-.step .st{font-size:3.2mm;font-weight:700;line-height:1.3;margin-top:2mm}
-.step .icbox{position:absolute;top:-4.6mm;right:3.4mm;width:9.2mm;height:9.2mm}
-.step.h1x{height:40mm}.step.h2x{height:45mm}.step.h3x{height:50mm}.step.h4x{height:55mm}.step.h5x{height:60mm}
-.step.h5x{background:var(--ink);border-color:var(--ink);color:#EDF3F1}
-.step.h5x .sn b{color:var(--brass)}
-.step.h5x .st{color:#fff}
-.climb{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none}
-.s6-lead{display:grid;grid-template-columns:52mm 1fr;gap:8mm;margin-top:7mm;flex:1;min-height:0}
+/* five steps up — ascending trail with a summit */
+.mtrail{position:relative;height:74mm;margin-top:1mm;flex:none}
+.mtrail svg.under{position:absolute;inset:0;width:100%;height:100%}
+.mlab{position:absolute;width:44mm;text-align:center;z-index:2}
+.mlab .sn{font-size:2.7mm;letter-spacing:.3em;font-weight:800;text-transform:uppercase}
+.mlab .st{font-size:3.3mm;font-weight:700;line-height:1.25;margin-top:1mm}
+.s6-lead{display:grid;grid-template-columns:52mm 1fr;gap:8mm;margin-top:4mm;flex:1;min-height:0}
+.vib .s6-founder{background:var(--red2)}
+.vib .s6-founder .ava{border-color:var(--brass)}
+.vib .s6-bio h2 em{color:var(--red)}
 .s6-founder{
   background:var(--ink);border-radius:3mm;color:#EDF3F1;padding:5mm;
   display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:2.4mm;
@@ -830,7 +834,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      05 — SUCCESSFUL ASSIGNMENTS
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -846,38 +850,44 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       </div>
       <div class="aside-stat"><span class="stat"><span class="n">29</span><span class="t">Leadership<br>Mandates</span></span></div>
     </header>
-    <div class="tr-grid">
-      <div class="tr"><span class="no">1</span><div class="role">Chief Technology Officer<span class="org">Leading fintech company in India</span></div></div>
-      <div class="tr"><span class="no">2</span><div class="role">Country Head India<span class="org">US based AI/ML company</span></div></div>
-      <div class="tr"><span class="no">3</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing media group in India</span></div></div>
-      <div class="tr"><span class="no">4</span><div class="role">Chief Product Officer<span class="org">Singapore based leading fintech company</span></div></div>
-      <div class="tr"><span class="no">5</span><div class="role">Chief Revenue Officer<span class="org">Leading Edtech company in India</span></div></div>
-      <div class="tr"><span class="no">6</span><div class="role">Head of Corporate Development &amp; CFO<span class="org">Fastest growing media group</span></div></div>
-      <div class="tr"><span class="no">7</span><div class="role">Chief Marketing Officer<span class="org">Leading mobile company in China</span></div></div>
-      <div class="tr"><span class="no">8</span><div class="role">Chief Executive Officer<span class="org">Leading mobile company in China</span></div></div>
-      <div class="tr"><span class="no">9</span><div class="role">VP/SVP/Director Technology<span class="org">Top US based Investment banking company</span></div></div>
-      <div class="tr"><span class="no">10</span><div class="role">Chief Business Officer<span class="org">Leading fintech company in India</span></div></div>
-      <div class="tr"><span class="no">11</span><div class="role">Product Leader<span class="org">US based 2nd largest management consulting firm</span></div></div>
-      <div class="tr"><span class="no">12</span><div class="role">Head of Payments<span class="org">India's top emerging payments platform</span></div></div>
-      <div class="tr"><span class="no">13</span><div class="role">Head of Product<span class="org">Leading Edtech company in India</span></div></div>
-      <div class="tr"><span class="no">14</span><div class="role">Chief Architect<span class="org">Leading payment company</span></div></div>
-      <div class="tr"><span class="no">15</span><div class="role">Head of Design<span class="org">Leading Edtech company in India</span></div></div>
-      <div class="tr"><span class="no">16</span><div class="role">AVP/VP Technology<span class="org">Large E-commerce company</span></div></div>
-      <div class="tr"><span class="no">17</span><div class="role">Principal Architect<span class="org">Japan based leading SaaS company</span></div></div>
-      <div class="tr"><span class="no">18</span><div class="role">Director of Product<span class="org">Leading gaming company in India</span></div></div>
-      <div class="tr"><span class="no">19</span><div class="role">Head of Analytics<span class="org">US based Fortune 500 company</span></div></div>
-      <div class="tr"><span class="no">20</span><div class="role">Director Data &amp; Analytics<span class="org">US based fast food corporation</span></div></div>
-      <div class="tr"><span class="no">21</span><div class="role">Head of Sales<span class="org">Fastest growing media group in India</span></div></div>
-      <div class="tr"><span class="no">22</span><div class="role">Head of Data<span class="org">Large E-commerce company</span></div></div>
-      <div class="tr"><span class="no">23</span><div class="role">Head Sales and Operations<span class="org">Leading Edtech company in India</span></div></div>
-      <div class="tr"><span class="no">24</span><div class="role">Head Risk and Compliance<span class="org">Leading fintech company in India</span></div></div>
-      <div class="tr"><span class="no">25</span><div class="role">Head of Design<span class="org">Largest Retail company in India</span></div></div>
-      <div class="tr"><span class="no">26</span><div class="role">Head of DevOps<span class="org">Largest Retail company in India</span></div></div>
-      <div class="tr"><span class="no">27</span><div class="role">Head of Operations<span class="org">Largest Tyre manufacturer in India</span></div></div>
-      <div class="tr"><span class="no">28</span><div class="role">Head of Service Experience (After Sales)<span class="org">Largest Tyre manufacturer in India</span></div></div>
-      <div class="tr"><span class="no">29</span><div class="role">Head of Cloud &amp; Infrastructure<span class="org">&nbsp;</span></div></div>
-      <div class="tr" style="background:var(--ink);border-color:var(--ink);align-items:center">
-        <div class="role" style="color:#EDF3F1">Every chair filled, on time<span class="org" style="color:var(--brass)">…and counting</span></div>
+    <div class="trk-cols">
+      <div class="trk">
+        <div class="ti"><span class="no">1</span><div class="role">Chief Technology Officer<span class="org">Leading fintech company in India</span></div></div>
+        <div class="ti"><span class="no">2</span><div class="role">Country Head India<span class="org">US based AI/ML company</span></div></div>
+        <div class="ti"><span class="no">3</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing media group in India</span></div></div>
+        <div class="ti"><span class="no">4</span><div class="role">Chief Product Officer<span class="org">Singapore based leading fintech company</span></div></div>
+        <div class="ti"><span class="no">5</span><div class="role">Chief Revenue Officer<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">6</span><div class="role">Head of Corporate Development &amp; CFO<span class="org">Fastest growing media group</span></div></div>
+        <div class="ti"><span class="no">7</span><div class="role">Chief Marketing Officer<span class="org">Leading mobile company in China</span></div></div>
+        <div class="ti"><span class="no">8</span><div class="role">Chief Executive Officer<span class="org">Leading mobile company in China</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">9</span><div class="role">VP/SVP/Director Technology<span class="org">Top US based Investment banking company</span></div></div>
+        <div class="ti"><span class="no">10</span><div class="role">Chief Business Officer<span class="org">Leading fintech company in India</span></div></div>
+        <div class="ti"><span class="no">11</span><div class="role">Product Leader<span class="org">US based 2nd largest management consulting firm</span></div></div>
+        <div class="ti"><span class="no">12</span><div class="role">Head of Payments<span class="org">India's top emerging payments platform</span></div></div>
+        <div class="ti"><span class="no">13</span><div class="role">Head of Product<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">14</span><div class="role">Chief Architect<span class="org">Leading payment company</span></div></div>
+        <div class="ti"><span class="no">15</span><div class="role">Head of Design<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">16</span><div class="role">AVP/VP Technology<span class="org">Large E-commerce company</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">17</span><div class="role">Principal Architect<span class="org">Japan based leading SaaS company</span></div></div>
+        <div class="ti"><span class="no">18</span><div class="role">Director of Product<span class="org">Leading gaming company in India</span></div></div>
+        <div class="ti"><span class="no">19</span><div class="role">Head of Analytics<span class="org">US based Fortune 500 company</span></div></div>
+        <div class="ti"><span class="no">20</span><div class="role">Director Data &amp; Analytics<span class="org">US based fast food corporation</span></div></div>
+        <div class="ti"><span class="no">21</span><div class="role">Head of Sales<span class="org">Fastest growing media group in India</span></div></div>
+        <div class="ti"><span class="no">22</span><div class="role">Head of Data<span class="org">Large E-commerce company</span></div></div>
+        <div class="ti"><span class="no">23</span><div class="role">Head Sales and Operations<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">24</span><div class="role">Head Risk and Compliance<span class="org">Leading fintech company in India</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">25</span><div class="role">Head of Design<span class="org">Largest Retail company in India</span></div></div>
+        <div class="ti"><span class="no">26</span><div class="role">Head of DevOps<span class="org">Largest Retail company in India</span></div></div>
+        <div class="ti"><span class="no">27</span><div class="role">Head of Operations<span class="org">Largest Tyre manufacturer in India</span></div></div>
+        <div class="ti"><span class="no">28</span><div class="role">Head of Service Experience (After Sales)<span class="org">Largest Tyre manufacturer in India</span></div></div>
+        <div class="ti"><span class="no">29</span><div class="role">Head of Cloud &amp; Infrastructure</div></div>
+        <p class="trk-note">Every chair filled, on time —<br><b>…and counting.</b></p>
       </div>
     </div>
   </div>
@@ -890,7 +900,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      06 — METHODOLOGY + LEADERSHIP
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -906,12 +916,22 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       </div>
       <div class="aside-stat"><span class="stat"><span class="n">05</span><span class="t">Step Search<br>Process</span></span></div>
     </header>
-    <div class="steps">
-      <div class="step h1x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div><div class="sn">Step<b>01</b></div><div class="st">Research, Analyze, and Understand</div></div>
-      <div class="step h2x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div><div class="sn">Step<b>02</b></div><div class="st">Assessment</div></div>
-      <div class="step h3x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sync"/></svg></div><div class="sn">Step<b>03</b></div><div class="st">Sync-up with Stakeholders</div></div>
-      <div class="step h4x"><div class="icbox ol"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div><div class="sn">Step<b>04</b></div><div class="st">Support</div></div>
-      <div class="step h5x"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-loop"/></svg></div><div class="sn">Step<b>05</b></div><div class="st">Continuous Collaboration</div></div>
+    <div class="mtrail">
+      <svg class="under" viewBox="0 0 240 74" preserveAspectRatio="none">
+        <path d="M22,56 L70,47 L118,38 L166,29 L214,20"
+              fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="tnod c1" style="left:22mm;top:56mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-search"/></svg></div>
+      <div class="mlab" style="left:0;top:65mm"><div class="sn" style="color:var(--red)">Step 01</div><div class="st">Research, Analyze, and Understand</div></div>
+      <div class="tnod c2" style="left:70mm;top:47mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-scale"/></svg></div>
+      <div class="mlab" style="left:48mm;top:56mm"><div class="sn" style="color:var(--org)">Step 02</div><div class="st">Assessment</div></div>
+      <div class="tnod c3" style="left:118mm;top:38mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-sync"/></svg></div>
+      <div class="mlab" style="left:96mm;top:47mm"><div class="sn" style="color:var(--azu)">Step 03</div><div class="st">Sync-up with Stakeholders</div></div>
+      <div class="tnod c4" style="left:166mm;top:29mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-shield"/></svg></div>
+      <div class="mlab" style="left:144mm;top:38mm"><div class="sn" style="color:var(--emerald)">Step 04</div><div class="st">Support</div></div>
+      <svg class="tflag" style="left:214mm;top:11mm" viewBox="0 0 24 24"><use href="#i-flag" class="ic"/></svg>
+      <div class="tnod dei" style="left:214mm;top:20mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-loop"/></svg></div>
+      <div class="mlab" style="left:192mm;top:30.5mm"><div class="sn" style="color:var(--red)">Step 05</div><div class="st">Continuous Collaboration</div></div>
     </div>
     <div class="s6-lead">
       <div class="s6-founder">

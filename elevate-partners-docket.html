@@ -27,6 +27,7 @@
   --azu:  #1F6FB2;   /* azure blue             */
   --plum: #7A3B8F;   /* plum purple            */
   --mag:  #C2185B;   /* magenta                */
+  --redl: #E08A80;   /* light coral red for dark grounds */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--paper)}
@@ -508,6 +509,59 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .vib .fn:nth-child(9) .no{background:var(--brass);border-color:var(--brass);color:var(--ink)}
 .vib .fn:nth-child(10) .no{background:var(--red2);border-color:var(--red2);color:#fff}
 
+/* vibrant on dark grounds */
+.dark.vib .eyebrow{color:var(--redl)}
+.dark.vib .eyebrow::before{background:var(--redl)}
+.dark.vib .frame i{border-color:var(--redl)}
+.dark.vib .rail b.on{background:var(--redl)}
+.dark.vib .rail .num{color:var(--redl)}
+/* slide 7 */
+.vib .s7-left .bigsay b{color:var(--redl)}
+.vib .s7-card .k{color:var(--red)}
+.vib .s7-rows .s7-row:nth-child(1) .icbox{background:var(--red);color:#fff}
+.vib .s7-rows .s7-row:nth-child(2) .icbox{background:var(--org);color:#fff}
+.vib .s7-rows .s7-row:nth-child(3) .icbox{background:var(--azu);color:#fff}
+.vib .s7-rows .s7-row:nth-child(4) .icbox{background:var(--plum);color:#fff}
+/* slide 8 */
+.vib .s8-card .cap{color:var(--red)}
+.vib .s8-recap h3{color:var(--red)}
+.vib .s8-card:nth-child(1) .icbox{background:var(--red);color:#fff}
+.vib .s8-card:nth-child(2) .icbox{background:var(--org);color:#fff}
+.vib .s8-card:nth-child(3) .icbox{background:var(--azu);color:#fff}
+.vib .s8-card:nth-child(4) .icbox{background:var(--emerald);color:#fff}
+.vib .s8-pills .s8-pill:nth-child(1) .icbox{background:var(--red);color:#fff}
+.vib .s8-pills .s8-pill:nth-child(2) .icbox{background:var(--org);color:#fff}
+.vib .s8-pills .s8-pill:nth-child(3) .icbox{background:var(--azu);color:#fff}
+.vib .s8-pills .s8-pill:nth-child(4) .icbox{background:var(--emerald);color:#fff}
+.vib .s8-pills .s8-pill:nth-child(5) .icbox{background:var(--brass);color:var(--ink)}
+.vib .s8-pills .s8-pill:nth-child(6) .icbox{background:var(--plum);color:#fff}
+/* capability pages 9, 11, 12 */
+.vib .cap-strip{background:var(--red2)}
+.vib .mand:nth-child(7n+1) .tick{background:var(--red)}
+.vib .mand:nth-child(7n+2) .tick{background:var(--org)}
+.vib .mand:nth-child(7n+3) .tick{background:var(--azu)}
+.vib .mand:nth-child(7n+4) .tick{background:var(--emerald)}
+.vib .mand:nth-child(7n+5) .tick{background:var(--brass)}
+.vib .mand:nth-child(7n+6) .tick{background:var(--plum)}
+.vib .mand:nth-child(7n) .tick{background:var(--mag)}
+.vib .mand-card:nth-child(7n+1){border-left-color:var(--red)}
+.vib .mand-card:nth-child(7n+2){border-left-color:var(--org)}
+.vib .mand-card:nth-child(7n+3){border-left-color:var(--azu)}
+.vib .mand-card:nth-child(7n+4){border-left-color:var(--emerald)}
+.vib .mand-card:nth-child(7n+5){border-left-color:var(--brass)}
+.vib .mand-card:nth-child(7n+6){border-left-color:var(--plum)}
+.vib .mand-card:nth-child(7n){border-left-color:var(--mag)}
+/* slide 10 */
+.vib .tl-head .ct{color:var(--red)}
+.vib .tl-cols>.tl-col:nth-child(1) .icbox{background:var(--red);color:#fff}
+.vib .tl-cols>.tl-col:nth-child(2) .icbox{background:var(--org);color:#fff}
+.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(1) .icbox{background:var(--azu);color:#fff}
+.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(2) .icbox{background:var(--emerald);color:#fff}
+.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(3) .icbox{background:var(--plum);color:#fff}
+/* slide 13 */
+.vib .s13-body .sub b{color:var(--redl)}
+.vib .s13-body .rulez{background:var(--redl)}
+
 /* ============================================================ screen vs print */
 @media screen{
   body{background:#111C1B;padding:16mm 0 20mm}
@@ -968,7 +1022,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      07 — CONNECT & ELEVATE
 ================================================================ -->
-<section class="sheet dark">
+<section class="sheet dark vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1017,7 +1071,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      08 — INTRODUCING ELEVATE PARTNERS
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1061,7 +1115,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      09 — TECHNOLOGY, PRODUCT & ANALYTICS
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1119,7 +1173,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      10 — TECHNOLOGY LANDSCAPE
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1208,7 +1262,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      11 — SALES & MARKETING
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1242,8 +1296,8 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       <div class="mand-card"><div class="role">Chief Marketing Officer</div><div class="org">Leading Mobile Company based in China</div></div>
       <div class="mand-card"><div class="role">Digital Marketing Head</div><div class="org">Leading Mobile Company based in China</div></div>
       <div class="mand-card"><div class="role">Head of Sales</div><div class="org">Fastest growing Media Group in India</div></div>
-      <div class="mand-card" style="background:var(--ink);border-color:var(--ink);border-left-color:var(--brass)">
-        <div class="role" style="color:#EDF3F1">Revenue leadership, delivered</div><div class="org" style="color:var(--brass)">from inside sales to the CRO chair</div>
+      <div class="mand-card" style="background:var(--red2);border-color:var(--red2);border-left-color:var(--brass)">
+        <div class="role" style="color:#fff">Revenue leadership, delivered</div><div class="org" style="color:var(--brass)">from inside sales to the CRO chair</div>
       </div>
     </div>
   </div>
@@ -1256,7 +1310,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      12 — F&A, FP&A & OTHERS
 ================================================================ -->
-<section class="sheet">
+<section class="sheet vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">
@@ -1292,8 +1346,8 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       <div class="mand-card"><div class="role">Head Procurement</div><div class="org">US based Automatic Transition Company</div></div>
       <div class="mand-card"><div class="role">Business Head</div><div class="org">Leading Fintech company in India</div></div>
       <div class="mand-card"><div class="role">Head Risk and Compliance</div><div class="org">Leading Fintech company in India</div></div>
-      <div class="mand-card" style="background:var(--ink);border-color:var(--ink);border-left-color:var(--brass)">
-        <div class="role" style="color:#EDF3F1">From the back office to the boardroom</div><div class="org" style="color:var(--brass)">finance, people &amp; operations leadership</div>
+      <div class="mand-card" style="background:var(--red2);border-color:var(--red2);border-left-color:var(--brass)">
+        <div class="role" style="color:#fff">From the back office to the boardroom</div><div class="org" style="color:var(--brass)">finance, people &amp; operations leadership</div>
       </div>
     </div>
   </div>
@@ -1306,7 +1360,7 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 <!-- ================================================================
      13 — THANK YOU
 ================================================================ -->
-<section class="sheet dark">
+<section class="sheet dark vib">
   <div class="frame"><i></i><i></i><i></i><i></i></div>
   <svg class="deco" viewBox="0 0 297 200" preserveAspectRatio="xMidYMid slice"><use href="#bg"/></svg>
   <aside class="rail">

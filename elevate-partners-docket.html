@@ -342,6 +342,13 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
   font-family:var(--serif);font-style:italic;font-size:3.5mm;color:var(--mute);line-height:1.45;
 }
 .trk-note b{font-family:var(--sans);font-style:normal;font-weight:800;color:var(--red)}
+/* three-strand variant with larger type (capability pages) */
+.trk-cols.three{grid-template-columns:repeat(3,1fr)}
+.trk-cols.three .trk::before{left:3.7mm}
+.trk-cols.three .ti{padding:3mm 0}
+.trk-cols.three .ti .no{width:7.6mm;height:7.6mm;font-size:2.9mm}
+.trk-cols.three .ti .role{font-size:3.4mm;line-height:1.3}
+.trk-cols.three .ti .org{font-size:2.95mm;margin-top:.6mm}
 
 /* ============================================================ 06 METHODOLOGY */
 /* five steps up — ascending trail with a summit */
@@ -409,20 +416,35 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .s8-card .cap{font-size:2.6mm;letter-spacing:.26em;text-transform:uppercase;color:var(--brasstxt);font-weight:800}
 .s8-card p{font-size:3.12mm;line-height:1.5;color:#28403F}
 .s8-card p b{color:var(--ink)}
-.s8-recap{margin-top:5mm;background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:4.4mm 5.5mm;flex:1;display:flex;flex-direction:column;min-height:0}
-.s8-recap h3{font-size:3.1mm;letter-spacing:.32em;text-transform:uppercase;color:var(--brasstxt);font-weight:700}
-.s8-recap .hub-line{font-size:3.4mm;font-weight:700;margin-top:1.6mm}
-.s8-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:2.8mm;margin-top:3.4mm;flex:1}
-.s8-pill{display:flex;align-items:center;gap:3mm;border:.35mm solid var(--line);border-radius:2.4mm;padding:2.6mm 3.2mm;background:var(--paper)}
-.s8-pill .icbox{width:7.6mm;height:7.6mm;padding:1.8mm}
-.s8-pill .tx{font-size:2.9mm;font-weight:600;line-height:1.3}
-.s8-pill .tx b{color:var(--pine)}
+/* the advantage fishbone — six ribs feeding the partnership */
+.s8-adv{margin-top:4mm;display:flex;flex-direction:column;flex:1;min-height:0}
+.s8-adv h3{font-size:3.1mm;letter-spacing:.32em;text-transform:uppercase;color:var(--red);font-weight:700}
+.fbone{position:relative;height:74mm;margin-top:1mm;flex:none}
+.fbone svg.under{position:absolute;inset:0;width:100%;height:100%}
+.fbl{
+  position:absolute;width:40mm;height:16mm;z-index:2;
+  display:flex;align-items:center;text-align:left;
+  font-size:2.9mm;line-height:1.36;font-weight:500;color:#28403F;
+}
+.fbl.up{top:7mm}
+.fbl.dn{top:53mm}
+.fbl b{font-weight:800;color:var(--ink)}
+.fbl .n{font-size:5mm;font-weight:800;color:var(--red);line-height:1}
+.fb-hub{
+  position:absolute;left:215mm;top:38mm;translate:-50% -50%;z-index:2;
+  width:31mm;height:31mm;border-radius:50%;background:var(--red2);
+  border:1mm solid var(--brass);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1.2mm;text-align:center;padding:3mm;
+}
+.fb-hub .hi{width:6mm;height:6mm;color:var(--brass)}
+.fb-hub .ht{font-size:2.75mm;font-weight:700;line-height:1.3}
 
 /* ============================================================ 09/11/12 CAPABILITIES */
 .cap-strip{background:var(--ink);border-radius:3mm;color:#EDF3F1;padding:4mm 5.5mm;margin-bottom:4.5mm}
-.cap-strip .k{font-size:2.7mm;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:2.4mm;display:flex;align-items:center;gap:2.6mm}
-.cap-strip .chips{display:flex;flex-wrap:wrap;gap:2mm}
-.cap-strip .chip{background:rgba(237,243,241,.08);border-color:rgba(237,243,241,.3);color:#EDF3F1;font-size:2.85mm;padding:1.3mm 3mm;font-weight:500}
+.cap-strip .k{font-size:2.9mm;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:2.4mm;display:flex;align-items:center;gap:2.6mm}
+.cap-strip .chips{display:flex;flex-wrap:wrap;gap:2.2mm}
+.cap-strip .chip{background:rgba(237,243,241,.08);border-color:rgba(237,243,241,.3);color:#EDF3F1;font-size:3.15mm;padding:1.6mm 3.4mm;font-weight:500}
 .cap-strip .chips .sep{align-self:center;font-size:2.7mm;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 1.6mm}
 .mand-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;flex:1;align-content:start}
 .mand{display:flex;align-items:flex-start;gap:3mm;padding:1.98mm 0;border-top:.3mm solid var(--line)}
@@ -529,12 +551,6 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .vib .s8-card:nth-child(2) .icbox{background:var(--org);color:#fff}
 .vib .s8-card:nth-child(3) .icbox{background:var(--azu);color:#fff}
 .vib .s8-card:nth-child(4) .icbox{background:var(--emerald);color:#fff}
-.vib .s8-pills .s8-pill:nth-child(1) .icbox{background:var(--red);color:#fff}
-.vib .s8-pills .s8-pill:nth-child(2) .icbox{background:var(--org);color:#fff}
-.vib .s8-pills .s8-pill:nth-child(3) .icbox{background:var(--azu);color:#fff}
-.vib .s8-pills .s8-pill:nth-child(4) .icbox{background:var(--emerald);color:#fff}
-.vib .s8-pills .s8-pill:nth-child(5) .icbox{background:var(--brass);color:var(--ink)}
-.vib .s8-pills .s8-pill:nth-child(6) .icbox{background:var(--plum);color:#fff}
 /* capability pages 9, 11, 12 */
 .vib .cap-strip{background:var(--red2)}
 .vib .mand:nth-child(7n+1) .tick{background:var(--red)}
@@ -1093,16 +1109,41 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       <div class="s8-card"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div class="cap">Our experience</div><p>The team is having over <b>20+ years</b> of extensive experience in HR Domain with expertise in Recruitment for <b>Mid-level requirements to Executive Search</b>, Career Counselling and Industry Mapping.</p></div>
       <div class="s8-card"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-report"/></svg></div><div class="cap">Beyond search</div><p>We also assist with <b>Talent landscape reports</b>, <b>Compensation benchmarking</b> and <b>Salary guides</b> which will help you navigate through your decision making process.</p></div>
     </div>
-    <div class="s8-recap">
+    <div class="s8-adv">
       <h3>The Elevate Advantage</h3>
-      <div class="hub-line">Trusted Partner to Level-Up Growth</div>
-      <div class="s8-pills">
-        <div class="s8-pill"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div><div class="tx">Expertise to Serve <b>14 Industries</b></div></div>
-        <div class="s8-pill"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div><div class="tx">Reputation of exceeding expectations for <b>On Time delivery with High Quality</b></div></div>
-        <div class="s8-pill"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div><div class="tx">Strong Capability with <b>Start-up mindset</b></div></div>
-        <div class="s8-pill"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div><div class="tx">Strong Relationship with <b>Executives across Industries</b></div></div>
-        <div class="s8-pill"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div><div class="tx">Ability to <b>ramp up resources</b> in short timelines</div></div>
-        <div class="s8-pill"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div><div class="tx">Successfully delivered over <b>30 Key Leadership Positions</b></div></div>
+      <div class="fbone">
+        <svg class="under" viewBox="0 0 240 74" preserveAspectRatio="none">
+          <path d="M6,38 H193" fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round"/>
+          <polygon points="193,34.4 200,38 193,41.6" fill="#8E1B20"/>
+          <g stroke-width=".8" fill="none">
+            <path d="M30,15 V38"  stroke="#B02428"/>
+            <path d="M86,15 V38"  stroke="#D9601A"/>
+            <path d="M142,15 V38" stroke="#1F6FB2"/>
+            <path d="M58,61 V38"  stroke="#2C9C6A"/>
+            <path d="M114,61 V38" stroke="#C39A2B"/>
+            <path d="M170,61 V38" stroke="#7A3B8F"/>
+          </g>
+          <g>
+            <circle cx="30" cy="38" r="1.2" fill="#B02428"/><circle cx="86" cy="38" r="1.2" fill="#D9601A"/><circle cx="142" cy="38" r="1.2" fill="#1F6FB2"/>
+            <circle cx="58" cy="38" r="1.2" fill="#2C9C6A"/><circle cx="114" cy="38" r="1.2" fill="#C39A2B"/><circle cx="170" cy="38" r="1.2" fill="#7A3B8F"/>
+          </g>
+        </svg>
+        <div class="tnod c1" style="left:30mm;top:15mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-factory"/></svg></div>
+        <div class="fbl up" style="left:38.5mm"><span>Expertise to Serve <span class="n">14</span> <b>Industries</b></span></div>
+        <div class="tnod c2" style="left:86mm;top:15mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-medal"/></svg></div>
+        <div class="fbl up" style="left:94.5mm"><span>Have a reputation of exceeding expectations for <b>On Time delivery with High Quality</b></span></div>
+        <div class="tnod c3" style="left:142mm;top:15mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-rocket"/></svg></div>
+        <div class="fbl up" style="left:150.5mm"><span>Strong Capability with <b>Start-up mindset</b></span></div>
+        <div class="tnod c4" style="left:58mm;top:61mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-people"/></svg></div>
+        <div class="fbl dn" style="left:66.5mm"><span>Strong Relationship with <b>Executives across Industries</b></span></div>
+        <div class="tnod c5" style="left:114mm;top:61mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+        <div class="fbl dn" style="left:122.5mm"><span>Ability to <b>ramp up resources</b> in short timelines</span></div>
+        <div class="tnod c6" style="left:170mm;top:61mm"><svg class="ic" viewBox="0 0 24 24"><use href="#i-trophy"/></svg></div>
+        <div class="fbl dn" style="left:178.5mm"><span>Successfully delivered over <span class="n">30</span> <b>Key Leadership Positions</b></span></div>
+        <div class="fb-hub">
+          <svg class="hi" viewBox="0 0 24 24"><use href="#i-handshake" class="ic" style="stroke:currentColor;fill:none"/></svg>
+          <div class="ht">Trusted Partner to Level-Up Growth</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1137,30 +1178,32 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
         <span class="chip">Backend</span><span class="chip">Frontend (UI)</span><span class="chip">Full stack</span><span class="chip">MEAN stack</span><span class="chip">MERN stack</span><span class="chip">Data Engineer</span><span class="chip">Data Scientist</span><span class="chip">QA / SDET</span><span class="chip">DevOps / SRE</span><span class="chip">Architect</span><span class="chip">Product Managers</span>
       </div>
     </div>
-    <div class="mand-cols">
-      <div>
-        <div class="mand"><span class="tick"></span><div class="role">Director of Engineering <span>· Israel based leading enterprise software company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head — Automotive Electronics, Controls &amp; Software Engineering <span>· US based leading Automotive OEM</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of Engineering <span>· Largest Edtech company in the world</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Director Data &amp; Analytics <span>· US based fast food corporation</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">VP — Big Data <span>· Indian conglomerate company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of DevOps <span>· Largest Retail company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of Analytics <span>· US based Fortune 500 company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Chief Product Officer <span>· Singapore based leading fintech company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Product Leader <span>· US based 2nd largest management consulting firm</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of Product <span>· Leading Edtech company in India</span></div></div>
+    <div class="trk-cols three">
+      <div class="trk">
+        <div class="ti"><span class="no">1</span><div class="role">Director of Engineering<span class="org">Israel based leading enterprise software company</span></div></div>
+        <div class="ti"><span class="no">2</span><div class="role">Head — Automotive Electronics, Controls &amp; Software Engineering<span class="org">US based leading Automotive OEM</span></div></div>
+        <div class="ti"><span class="no">3</span><div class="role">Head of Engineering<span class="org">Largest Edtech company in the world</span></div></div>
+        <div class="ti"><span class="no">4</span><div class="role">Director Data &amp; Analytics<span class="org">US based fast food corporation</span></div></div>
+        <div class="ti"><span class="no">5</span><div class="role">VP — Big Data<span class="org">Indian conglomerate company</span></div></div>
+        <div class="ti"><span class="no">6</span><div class="role">Head of DevOps<span class="org">Largest Retail company in India</span></div></div>
+        <div class="ti"><span class="no">7</span><div class="role">Head of Analytics<span class="org">US based Fortune 500 company</span></div></div>
       </div>
-      <div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of Engineering <span>· Largest Edtech company in the world</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of Design <span>· Leading Edtech company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Director of Product <span>· Leading gaming company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Enterprise Architect <span>· Largest Retail company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Enterprise Architect — Automation &amp; Control solutions <span>· US based engineering multinational conglomerate</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Principal Data Scientist <span>· Leading Edtech company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Principal Data Engineer <span>· Leading Edtech company in India</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Principal Architect <span>· Japan based leading E-commerce company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Engineering Manager <span>· US based leading SaaS company</span></div></div>
-        <div class="mand"><span class="tick"></span><div class="role">Head of QA <span>· Leading Edtech company in India</span></div></div>
+      <div class="trk">
+        <div class="ti"><span class="no">8</span><div class="role">Chief Product Officer<span class="org">Singapore based leading fintech company</span></div></div>
+        <div class="ti"><span class="no">9</span><div class="role">Product Leader<span class="org">US based 2nd largest management consulting firm</span></div></div>
+        <div class="ti"><span class="no">10</span><div class="role">Head of Product<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">11</span><div class="role">Head of Engineering<span class="org">Largest Edtech company in the world</span></div></div>
+        <div class="ti"><span class="no">12</span><div class="role">Head of Design<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">13</span><div class="role">Director of Product<span class="org">Leading gaming company in India</span></div></div>
+        <div class="ti"><span class="no">14</span><div class="role">Enterprise Architect<span class="org">Largest Retail company in India</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">15</span><div class="role">Enterprise Architect — Automation &amp; Control solutions<span class="org">US based engineering multinational conglomerate</span></div></div>
+        <div class="ti"><span class="no">16</span><div class="role">Principal Data Scientist<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">17</span><div class="role">Principal Data Engineer<span class="org">Leading Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">18</span><div class="role">Principal Architect<span class="org">Japan based leading E-commerce company</span></div></div>
+        <div class="ti"><span class="no">19</span><div class="role">Engineering Manager<span class="org">US based leading SaaS company</span></div></div>
+        <div class="ti"><span class="no">20</span><div class="role">Head of QA<span class="org">Leading Edtech company in India</span></div></div>
       </div>
     </div>
   </div>

@@ -482,6 +482,53 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
   box-shadow:0 0 0 .9mm var(--paper);
 }
 
+/* ============================================================ 11 MIND-MAP */
+.mm{position:relative;width:240mm;height:138mm;margin:0 auto;flex:none}
+.mm svg.under{position:absolute;inset:0;width:100%;height:100%}
+.mm-spine{
+  position:absolute;left:103mm;top:6mm;width:34mm;height:126mm;z-index:2;
+  background:var(--red2);border-radius:5mm;color:#fff;
+  display:flex;flex-direction:column;align-items:center;gap:2.2mm;padding:5.5mm 3.5mm;
+}
+.mm-spine .mi{width:7mm;height:7mm;color:var(--brass);flex:none}
+.mm-spine .mk{font-size:2.9mm;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-align:center;line-height:1.4}
+.mm-spine .ms{font-size:2.6mm;color:rgba(255,255,255,.75);text-align:center;letter-spacing:.06em;margin-bottom:1.2mm}
+.mm-spine .chip{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;font-size:2.75mm;padding:1.2mm 3mm;font-weight:500}
+.mm-item{position:absolute;translate:0 -50%;width:81mm;display:flex;align-items:center;gap:3.2mm;z-index:2}
+.mm-item.L{left:18mm;flex-direction:row-reverse;text-align:right}
+.mm-item.R{left:141mm}
+.mm-item .no{
+  flex:none;width:6.6mm;height:6.6mm;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5mm;font-weight:800;font-variant-numeric:tabular-nums;
+  color:#fff;box-shadow:0 0 0 1mm var(--paper);
+}
+.mm-item .role{font-size:3.3mm;font-weight:700;line-height:1.3}
+.mm-item .org{display:block;font-size:2.9mm;font-weight:400;color:var(--mute);line-height:1.28;margin-top:.5mm}
+
+/* ============================================================ 12 SPECTRUM + FLAGS */
+.spec-line{font-size:3.4mm;color:#28403F;margin-top:1mm}
+.spec-line b{color:var(--red);font-weight:800}
+.spec{display:flex;width:100%;height:9.5mm;border-radius:2.4mm;overflow:hidden;margin:2.8mm 0 1mm}
+.spec span{
+  flex:1 1 auto;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:3.05mm;font-weight:700;letter-spacing:.04em;padding:0 3mm;white-space:nowrap;
+}
+.tflags{position:relative;width:240mm;height:104mm;margin:0 auto;flex:none}
+.tflags svg.under{position:absolute;inset:0;width:100%;height:100%}
+.tf-no{
+  position:absolute;translate:-50% -50%;z-index:2;
+  width:6.6mm;height:6.6mm;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5mm;font-weight:800;font-variant-numeric:tabular-nums;
+  color:#fff;box-shadow:0 0 0 1mm var(--paper);
+}
+.tf{position:absolute;width:32mm;translate:-50% 0;display:flex;flex-direction:column;text-align:center;z-index:1}
+.tf.up{top:9mm;height:30mm;justify-content:flex-end}
+.tf.dn{top:65mm;height:30mm;justify-content:flex-start}
+.tf .role{font-size:3.05mm;font-weight:700;line-height:1.28}
+.tf .org{font-size:2.75mm;color:var(--mute);line-height:1.28;margin-top:.6mm}
+
 /* ============================================================ 13 THANK YOU */
 .s13-body{position:absolute;inset:5mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20mm}
 .s13-body .mark{width:14mm;height:14mm;margin-bottom:8mm}
@@ -1301,31 +1348,45 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       </div>
       <div class="aside-stat"><span class="stat"><span class="n">11</span><span class="t">Marquee<br>Mandates</span></span></div>
     </header>
-    <div class="cap-strip">
-      <div class="k"><svg style="width:4mm;height:4mm" viewBox="0 0 24 24"><use href="#i-mega" class="ic"/></svg>Sales Managers / Inside Sales — placed across many industries</div>
-      <div class="chips">
-        <span class="chip">SaaS</span><span class="chip">Cloud</span><span class="chip">ERP</span><span class="chip">Laptop manufacturers</span><span class="chip">Fintech</span><span class="chip">Edtech</span><span class="chip">+ many other industries</span>
+    <div class="mm">
+      <svg class="under" viewBox="0 0 240 138" preserveAspectRatio="none">
+        <g stroke-width=".8" fill="none">
+          <path d="M103,16 H99"    stroke="#B02428"/>
+          <path d="M103,38 H99"    stroke="#D9601A"/>
+          <path d="M103,60 H99"    stroke="#1F6FB2"/>
+          <path d="M103,82 H99"    stroke="#2C9C6A"/>
+          <path d="M103,104 H99"   stroke="#C39A2B"/>
+          <path d="M103,126 H99"   stroke="#7A3B8F"/>
+          <path d="M137,22 H141"   stroke="#C2185B"/>
+          <path d="M137,46.5 H141" stroke="#B02428"/>
+          <path d="M137,71 H141"   stroke="#D9601A"/>
+          <path d="M137,95.5 H141" stroke="#1F6FB2"/>
+          <path d="M137,120 H141"  stroke="#2C9C6A"/>
+        </g>
+      </svg>
+      <div class="mm-spine">
+        <svg class="mi" viewBox="0 0 24 24"><use href="#i-mega" class="ic"/></svg>
+        <div class="mk">Sales Managers / Inside Sales</div>
+        <div class="ms">placed across many industries</div>
+        <span class="chip">SaaS</span>
+        <span class="chip">Cloud</span>
+        <span class="chip">ERP</span>
+        <span class="chip">Laptop manufacturers</span>
+        <span class="chip">Fintech</span>
+        <span class="chip">Edtech</span>
+        <span class="chip">+ many other industries</span>
       </div>
-    </div>
-    <div class="trk-cols three">
-      <div class="trk">
-        <div class="ti"><span class="no">1</span><div class="role">Sales Director<span class="org">US based engineering multinational conglomerate company</span></div></div>
-        <div class="ti"><span class="no">2</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing Media Group in India</span></div></div>
-        <div class="ti"><span class="no">3</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing Edtech company in India</span></div></div>
-        <div class="ti"><span class="no">4</span><div class="role">Head of Sales<span class="org">Leading Edtech company in India</span></div></div>
-      </div>
-      <div class="trk">
-        <div class="ti"><span class="no">5</span><div class="role">VP Sales<span class="org">India's largest Real Estate Firm</span></div></div>
-        <div class="ti"><span class="no">6</span><div class="role">Inside Sales Head<span class="org">Largest Laptop manufacturer</span></div></div>
-        <div class="ti"><span class="no">7</span><div class="role">Enterprise Sales<span class="org">Leading ERP Company in India</span></div></div>
-        <div class="ti"><span class="no">8</span><div class="role">Head Sales and Operations<span class="org">Leading Edtech Company in India</span></div></div>
-      </div>
-      <div class="trk">
-        <div class="ti"><span class="no">9</span><div class="role">Chief Marketing Officer<span class="org">Leading Mobile Company based in China</span></div></div>
-        <div class="ti"><span class="no">10</span><div class="role">Digital Marketing Head<span class="org">Leading Mobile Company based in China</span></div></div>
-        <div class="ti"><span class="no">11</span><div class="role">Head of Sales<span class="org">Fastest growing Media Group in India</span></div></div>
-        <p class="trk-note">Revenue leadership, delivered —<br><b>from inside sales to the CRO chair.</b></p>
-      </div>
+      <div class="mm-item L" style="top:16mm"><span class="no" style="background:var(--red)">1</span><div class="tx"><div class="role">Sales Director</div><span class="org">US based engineering multinational conglomerate company</span></div></div>
+      <div class="mm-item L" style="top:38mm"><span class="no" style="background:var(--org)">2</span><div class="tx"><div class="role">Chief Revenue Officer</div><span class="org">Fastest growing Media Group in India</span></div></div>
+      <div class="mm-item L" style="top:60mm"><span class="no" style="background:var(--azu)">3</span><div class="tx"><div class="role">Chief Revenue Officer</div><span class="org">Fastest growing Edtech company in India</span></div></div>
+      <div class="mm-item L" style="top:82mm"><span class="no" style="background:var(--emerald)">4</span><div class="tx"><div class="role">Head of Sales</div><span class="org">Leading Edtech company in India</span></div></div>
+      <div class="mm-item L" style="top:104mm"><span class="no" style="background:var(--brass);color:var(--ink)">5</span><div class="tx"><div class="role">VP Sales</div><span class="org">India's largest Real Estate Firm</span></div></div>
+      <div class="mm-item L" style="top:126mm"><span class="no" style="background:var(--plum)">6</span><div class="tx"><div class="role">Inside Sales Head</div><span class="org">Largest Laptop manufacturer</span></div></div>
+      <div class="mm-item R" style="top:22mm"><span class="no" style="background:var(--mag)">7</span><div class="tx"><div class="role">Enterprise Sales</div><span class="org">Leading ERP Company in India</span></div></div>
+      <div class="mm-item R" style="top:46.5mm"><span class="no" style="background:var(--red)">8</span><div class="tx"><div class="role">Head Sales and Operations</div><span class="org">Leading Edtech Company in India</span></div></div>
+      <div class="mm-item R" style="top:71mm"><span class="no" style="background:var(--org)">9</span><div class="tx"><div class="role">Chief Marketing Officer</div><span class="org">Leading Mobile Company based in China</span></div></div>
+      <div class="mm-item R" style="top:95.5mm"><span class="no" style="background:var(--azu)">10</span><div class="tx"><div class="role">Digital Marketing Head</div><span class="org">Leading Mobile Company based in China</span></div></div>
+      <div class="mm-item R" style="top:120mm"><span class="no" style="background:var(--emerald)">11</span><div class="tx"><div class="role">Head of Sales</div><span class="org">Fastest growing Media Group in India</span></div></div>
     </div>
   </div>
   <footer class="foot">
@@ -1353,33 +1414,60 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
       </div>
       <div class="aside-stat"><span class="stat"><span class="n">13</span><span class="t">Marquee<br>Mandates</span></span></div>
     </header>
-    <div class="cap-strip">
-      <div class="k"><svg style="width:4mm;height:4mm" viewBox="0 0 24 24"><use href="#i-coins" class="ic"/></svg>Functions we cover — for many SaaS, E-commerce, Fintech, Edtech, Banking, Retail &amp; Gaming companies</div>
-      <div class="chips">
-        <span class="chip">F&amp;A</span><span class="chip">FP&amp;A</span><span class="chip">Audit</span><span class="chip">Taxation</span><span class="chip">Risk &amp; Compliance</span><span class="chip">Investor Relations</span>
-      </div>
+    <div class="spec-line"><b>Functions we cover</b> — for many SaaS, E-commerce, Fintech, Edtech, Banking, Retail &amp; Gaming companies</div>
+    <div class="spec">
+      <span style="background:var(--red)">F&amp;A</span>
+      <span style="background:var(--org)">FP&amp;A</span>
+      <span style="background:var(--azu)">Audit</span>
+      <span style="background:var(--emerald)">Taxation</span>
+      <span style="background:var(--brass);color:var(--ink)">Risk &amp; Compliance</span>
+      <span style="background:var(--plum)">Investor Relations</span>
     </div>
-    <div class="trk-cols three">
-      <div class="trk">
-        <div class="ti"><span class="no">1</span><div class="role">Head of Corporate Development &amp; CFO<span class="org">Fastest growing Media Group in India</span></div></div>
-        <div class="ti"><span class="no">2</span><div class="role">F&amp;A Head<span class="org">Fortune 500 HR solutions provider company</span></div></div>
-        <div class="ti"><span class="no">3</span><div class="role">FP&amp;A Head<span class="org">Fortune 500 HR solutions provider company</span></div></div>
-        <div class="ti"><span class="no">4</span><div class="role">Chief Executive Officer<span class="org">Leading Mobile Company based in China</span></div></div>
-        <div class="ti"><span class="no">5</span><div class="role">Service Delivery Leader<span class="org">Largest Healthcare Provider in the world</span></div></div>
-      </div>
-      <div class="trk">
-        <div class="ti"><span class="no">6</span><div class="role">Head of Operations<span class="org">Largest Tyre Company in India</span></div></div>
-        <div class="ti"><span class="no">7</span><div class="role">Head of Category<span class="org">Largest Tyre Company in India</span></div></div>
-        <div class="ti"><span class="no">8</span><div class="role">Chief Business Officer<span class="org">Leading Fintech company in India</span></div></div>
-        <div class="ti"><span class="no">9</span><div class="role">HR Head<span class="org">Leading Fintech company based in Singapore</span></div></div>
-        <div class="ti"><span class="no">10</span><div class="role">HR Head<span class="org">US based Automatic Transition Company</span></div></div>
-      </div>
-      <div class="trk">
-        <div class="ti"><span class="no">11</span><div class="role">Head Procurement<span class="org">US based Automatic Transition Company</span></div></div>
-        <div class="ti"><span class="no">12</span><div class="role">Business Head<span class="org">Leading Fintech company in India</span></div></div>
-        <div class="ti"><span class="no">13</span><div class="role">Head Risk and Compliance<span class="org">Leading Fintech company in India</span></div></div>
-        <p class="trk-note">From the back office to the boardroom —<br><b>finance, people &amp; operations leadership.</b></p>
-      </div>
+    <div class="tflags">
+      <svg class="under" viewBox="0 0 240 104" preserveAspectRatio="none">
+        <path d="M8,52 H232" fill="none" stroke="#B9CBC6" stroke-width=".9" stroke-dasharray="2.8 2.4" stroke-linecap="round"/>
+        <g stroke-width=".8" fill="none">
+          <path d="M18,52 V41"  stroke="#B02428"/>
+          <path d="M35,52 V63"  stroke="#D9601A"/>
+          <path d="M52,52 V41"  stroke="#1F6FB2"/>
+          <path d="M69,52 V63"  stroke="#2C9C6A"/>
+          <path d="M86,52 V41"  stroke="#C39A2B"/>
+          <path d="M103,52 V63" stroke="#7A3B8F"/>
+          <path d="M120,52 V41" stroke="#C2185B"/>
+          <path d="M137,52 V63" stroke="#B02428"/>
+          <path d="M154,52 V41" stroke="#D9601A"/>
+          <path d="M171,52 V63" stroke="#1F6FB2"/>
+          <path d="M188,52 V41" stroke="#2C9C6A"/>
+          <path d="M205,52 V63" stroke="#C39A2B"/>
+          <path d="M222,52 V41" stroke="#7A3B8F"/>
+        </g>
+      </svg>
+      <span class="tf-no" style="left:18mm;top:52mm;background:var(--red)">1</span>
+      <div class="tf up" style="left:18mm"><div class="role">Head of Corporate Development &amp; CFO</div><div class="org">Fastest growing Media Group in India</div></div>
+      <span class="tf-no" style="left:35mm;top:52mm;background:var(--org)">2</span>
+      <div class="tf dn" style="left:35mm"><div class="role">F&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
+      <span class="tf-no" style="left:52mm;top:52mm;background:var(--azu)">3</span>
+      <div class="tf up" style="left:52mm"><div class="role">FP&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
+      <span class="tf-no" style="left:69mm;top:52mm;background:var(--emerald)">4</span>
+      <div class="tf dn" style="left:69mm"><div class="role">Chief Executive Officer</div><div class="org">Leading Mobile Company based in China</div></div>
+      <span class="tf-no" style="left:86mm;top:52mm;background:var(--brass);color:var(--ink)">5</span>
+      <div class="tf up" style="left:86mm"><div class="role">Service Delivery Leader</div><div class="org">Largest Healthcare Provider in the world</div></div>
+      <span class="tf-no" style="left:103mm;top:52mm;background:var(--plum)">6</span>
+      <div class="tf dn" style="left:103mm"><div class="role">Head of Operations</div><div class="org">Largest Tyre Company in India</div></div>
+      <span class="tf-no" style="left:120mm;top:52mm;background:var(--mag)">7</span>
+      <div class="tf up" style="left:120mm"><div class="role">Head of Category</div><div class="org">Largest Tyre Company in India</div></div>
+      <span class="tf-no" style="left:137mm;top:52mm;background:var(--red)">8</span>
+      <div class="tf dn" style="left:137mm"><div class="role">Chief Business Officer</div><div class="org">Leading Fintech company in India</div></div>
+      <span class="tf-no" style="left:154mm;top:52mm;background:var(--org)">9</span>
+      <div class="tf up" style="left:154mm"><div class="role">HR Head</div><div class="org">Leading Fintech company based in Singapore</div></div>
+      <span class="tf-no" style="left:171mm;top:52mm;background:var(--azu)">10</span>
+      <div class="tf dn" style="left:171mm"><div class="role">HR Head</div><div class="org">US based Automatic Transition Company</div></div>
+      <span class="tf-no" style="left:188mm;top:52mm;background:var(--emerald)">11</span>
+      <div class="tf up" style="left:188mm"><div class="role">Head Procurement</div><div class="org">US based Automatic Transition Company</div></div>
+      <span class="tf-no" style="left:205mm;top:52mm;background:var(--brass);color:var(--ink)">12</span>
+      <div class="tf dn" style="left:205mm"><div class="role">Business Head</div><div class="org">Leading Fintech company in India</div></div>
+      <span class="tf-no" style="left:222mm;top:52mm;background:var(--plum)">13</span>
+      <div class="tf up" style="left:222mm"><div class="role">Head Risk and Compliance</div><div class="org">Leading Fintech company in India</div></div>
     </div>
   </div>
   <footer class="foot">

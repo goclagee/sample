@@ -473,19 +473,31 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .mand-card .org{font-size:2.85mm;color:var(--mute);line-height:1.3}
 
 /* ============================================================ 10 TECH LANDSCAPE */
-.tl-cols{display:grid;grid-template-columns:1.06fr 1fr 1fr;gap:4.5mm;flex:1;min-height:0}
-.tl-col{display:flex;flex-direction:column;gap:4.5mm;min-height:0}
-.tl-col .tl-panel{flex:1}
-.tl-panel{
-  background:var(--card);border:.35mm solid var(--line);border-radius:3mm;padding:4mm 4.4mm;
-  display:flex;flex-direction:column;min-height:0;
+/* five practice clusters as boxless dotted strands */
+.tl-cols{display:grid;grid-template-columns:1.06fr 1fr 1fr;gap:8mm;flex:1;min-height:0;align-content:start}
+.tl-col{display:flex;flex-direction:column;min-height:0}
+.tlx{margin-bottom:6.5mm;--c:var(--pine)}
+.tlx.k1{--c:var(--red)}
+.tlx.k2{--c:var(--org)}
+.tlx.k3{--c:var(--azu)}
+.tlx.k4{--c:var(--emerald)}
+.tlx.k5{--c:var(--plum)}
+.tlx-h{display:flex;align-items:center;gap:3.6mm;margin-bottom:2.6mm}
+.tlx-h .dis{
+  flex:none;width:10.5mm;height:10.5mm;border-radius:50%;padding:2.4mm;
+  display:flex;align-items:center;justify-content:center;color:#fff;background:var(--c);
+  box-shadow:0 0 0 1.1mm var(--paper),0 0 0 1.5mm var(--line);
 }
-.tl-panel.grow{flex:1}
-.tl-head{display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
-.tl-head .tx{font-size:3.4mm;font-weight:800;letter-spacing:.02em;line-height:1.2}
-.tl-head .ct{margin-left:auto;font-size:2.5mm;font-weight:700;color:var(--brasstxt);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
-.tl-chips{display:flex;flex-wrap:wrap;gap:1.9mm;align-content:flex-start}
-.tl-chips .chip{font-size:2.8mm;padding:1.3mm 2.9mm;font-weight:500;background:var(--paper)}
+.tlx-h .tt{font-size:3.6mm;font-weight:800;line-height:1.15}
+.tlx-h .ct{display:block;font-size:2.5mm;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;margin-top:.9mm}
+.tlx-list{position:relative}
+.tlx-list::before{content:"";position:absolute;left:5.1mm;top:1.5mm;bottom:1.5mm;border-left:.5mm dashed #B9CBC6}
+.tli{position:relative;padding:2mm 0 2mm 9.4mm;font-size:3.05mm;font-weight:500;line-height:1.32;color:#28403F}
+.tli::before{
+  content:"";position:absolute;left:4mm;top:50%;translate:0 -50%;
+  width:2.3mm;height:2.3mm;border-radius:50%;background:var(--c);
+  box-shadow:0 0 0 .9mm var(--paper);
+}
 
 /* ============================================================ 13 THANK YOU */
 .s13-body{position:absolute;inset:5mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20mm}
@@ -568,13 +580,6 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .vib .mand-card:nth-child(7n+5){border-left-color:var(--brass)}
 .vib .mand-card:nth-child(7n+6){border-left-color:var(--plum)}
 .vib .mand-card:nth-child(7n){border-left-color:var(--mag)}
-/* slide 10 */
-.vib .tl-head .ct{color:var(--red)}
-.vib .tl-cols>.tl-col:nth-child(1) .icbox{background:var(--red);color:#fff}
-.vib .tl-cols>.tl-col:nth-child(2) .icbox{background:var(--org);color:#fff}
-.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(1) .icbox{background:var(--azu);color:#fff}
-.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(2) .icbox{background:var(--emerald);color:#fff}
-.vib .tl-cols>.tl-col:nth-child(3) .tl-panel:nth-child(3) .icbox{background:var(--plum);color:#fff}
 /* slide 13 */
 .vib .s13-body .sub b{color:var(--redl)}
 .vib .s13-body .rulez{background:var(--redl)}
@@ -1235,63 +1240,68 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
     </header>
     <div class="tl-cols">
       <div class="tl-col">
-        <div class="tl-panel grow">
-          <div class="tl-head"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-code"/></svg></div><div class="tx">Application Development</div><span class="ct">13 tracks</span></div>
-          <div class="tl-chips">
-            <span class="chip">Backend — Corejava / Python / NodeJS / .NET / PHP / Golang / ROR</span>
-            <span class="chip">Front-End — ReactJS / Redux / AngularJS / JS / CSS / HTML</span>
-            <span class="chip">Full-Stack Developer (Backend &amp; Front End)</span>
-            <span class="chip">Technical Architect</span>
-            <span class="chip">Engineering / Tech Manager</span>
-            <span class="chip">Delivery / Project Managers</span>
-            <span class="chip">Database Developer (PLSQL / MSSQL)</span>
-            <span class="chip">DevOps Engineers</span>
-            <span class="chip">SDET (Software Development Engineers in Testing)</span>
-            <span class="chip">Scrum Masters</span>
-            <span class="chip">Android (Java &amp; Kotlin)</span>
-            <span class="chip">iOS</span>
-            <span class="chip">VP Engineering / CTO</span>
+        <div class="tlx k1">
+          <div class="tlx-h"><div class="dis"><svg class="ic" viewBox="0 0 24 24"><use href="#i-code"/></svg></div><div><div class="tt">Application Development</div><span class="ct">13 tracks</span></div></div>
+          <div class="tlx-list">
+            <div class="tli">Backend — Corejava / Python / NodeJS / .NET / PHP / Golang / ROR</div>
+            <div class="tli">Front-End — ReactJS / Redux / AngularJS / JS / CSS / HTML</div>
+            <div class="tli">Full-Stack Developer (Backend &amp; Front End)</div>
+            <div class="tli">Technical Architect</div>
+            <div class="tli">Engineering / Tech Manager</div>
+            <div class="tli">Delivery / Project Managers</div>
+            <div class="tli">Database Developer (PLSQL / MSSQL)</div>
+            <div class="tli">DevOps Engineers</div>
+            <div class="tli">SDET (Software Development Engineers in Testing)</div>
+            <div class="tli">Scrum Masters</div>
+            <div class="tli">Android (Java &amp; Kotlin)</div>
+            <div class="tli">iOS</div>
+            <div class="tli">VP Engineering / CTO</div>
           </div>
         </div>
       </div>
       <div class="tl-col">
-        <div class="tl-panel grow">
-          <div class="tl-head"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></div><div class="tx">IT Infrastructure / Shared Services</div><span class="ct">10 tracks</span></div>
-          <div class="tl-chips">
-            <span class="chip">Network Engineers</span>
-            <span class="chip">Security Engineer (Application / Network)</span>
-            <span class="chip">Service Delivery Managers</span>
-            <span class="chip">Site Reliability Engineers</span>
-            <span class="chip">Database Engineers (DBA)</span>
-            <span class="chip">Network Architects</span>
-            <span class="chip">Cloud Engineers</span>
-            <span class="chip">System Administrators (Windows / Linux / Unix)</span>
-            <span class="chip">DevOps Head</span>
-            <span class="chip">IT Infra Head</span>
+        <div class="tlx k2">
+          <div class="tlx-h"><div class="dis"><svg class="ic" viewBox="0 0 24 24"><use href="#i-server"/></svg></div><div><div class="tt">IT Infrastructure / Shared Services</div><span class="ct">10 tracks</span></div></div>
+          <div class="tlx-list">
+            <div class="tli">Network Engineers</div>
+            <div class="tli">Security Engineer (Application / Network)</div>
+            <div class="tli">Service Delivery Managers</div>
+            <div class="tli">Site Reliability Engineers</div>
+            <div class="tli">Database Engineers (DBA)</div>
+            <div class="tli">Network Architects</div>
+            <div class="tli">Cloud Engineers</div>
+            <div class="tli">System Administrators (Windows / Linux / Unix)</div>
+            <div class="tli">DevOps Head</div>
+            <div class="tli">IT Infra Head</div>
+          </div>
+        </div>
+        <div class="tlx k5">
+          <div class="tlx-h"><div class="dis"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bot"/></svg></div><div><div class="tt">RPA</div><span class="ct">3 tracks</span></div></div>
+          <div class="tlx-list">
+            <div class="tli">UiPath</div>
+            <div class="tli">Blueprism</div>
+            <div class="tli">Automation Anywhere</div>
           </div>
         </div>
       </div>
       <div class="tl-col">
-        <div class="tl-panel">
-          <div class="tl-head"><div class="icbox br"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chart"/></svg></div><div class="tx">Data &amp; Analytics</div><span class="ct">5 tracks</span></div>
-          <div class="tl-chips">
-            <span class="chip">Data Engineers</span>
-            <span class="chip">Data Scientists</span>
-            <span class="chip">BI Developers</span>
-            <span class="chip">Big Data Developers</span>
-            <span class="chip">Big Data Architects</span>
+        <div class="tlx k3">
+          <div class="tlx-h"><div class="dis"><svg class="ic" viewBox="0 0 24 24"><use href="#i-chart"/></svg></div><div><div class="tt">Data &amp; Analytics</div><span class="ct">5 tracks</span></div></div>
+          <div class="tlx-list">
+            <div class="tli">Data Engineers</div>
+            <div class="tli">Data Scientists</div>
+            <div class="tli">BI Developers</div>
+            <div class="tli">Big Data Developers</div>
+            <div class="tli">Big Data Architects</div>
           </div>
         </div>
-        <div class="tl-panel">
-          <div class="tl-head"><div class="icbox"><svg class="ic" viewBox="0 0 24 24"><use href="#i-apps"/></svg></div><div class="tx">Enterprise Applications</div><span class="ct">4 tracks</span></div>
-          <div class="tl-chips">
-            <span class="chip">SAP</span><span class="chip">Oracle</span><span class="chip">SalesForce</span><span class="chip">Workday</span>
-          </div>
-        </div>
-        <div class="tl-panel grow">
-          <div class="tl-head"><div class="icbox em"><svg class="ic" viewBox="0 0 24 24"><use href="#i-bot"/></svg></div><div class="tx">RPA</div><span class="ct">3 tracks</span></div>
-          <div class="tl-chips">
-            <span class="chip">UiPath</span><span class="chip">Blueprism</span><span class="chip">Automation Anywhere</span>
+        <div class="tlx k4">
+          <div class="tlx-h"><div class="dis"><svg class="ic" viewBox="0 0 24 24"><use href="#i-apps"/></svg></div><div><div class="tt">Enterprise Applications</div><span class="ct">4 tracks</span></div></div>
+          <div class="tlx-list">
+            <div class="tli">SAP</div>
+            <div class="tli">Oracle</div>
+            <div class="tli">SalesForce</div>
+            <div class="tli">Workday</div>
           </div>
         </div>
       </div>

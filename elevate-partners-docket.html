@@ -454,23 +454,6 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .cap-strip .chips{display:flex;flex-wrap:wrap;gap:2.2mm}
 .cap-strip .chip{background:rgba(237,243,241,.08);border-color:rgba(237,243,241,.3);color:#EDF3F1;font-size:3.15mm;padding:1.6mm 3.4mm;font-weight:500}
 .cap-strip .chips .sep{align-self:center;font-size:2.7mm;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 1.6mm}
-.mand-cols{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;flex:1;align-content:start}
-.mand{display:flex;align-items:flex-start;gap:3mm;padding:1.98mm 0;border-top:.3mm solid var(--line)}
-.mand .tick{flex:none;width:2.4mm;height:2.4mm;border-radius:.6mm;margin-top:1.4mm;background:var(--emerald)}
-.mand:nth-child(3n+2) .tick{background:var(--pine)}
-.mand:nth-child(3n) .tick{background:var(--brass)}
-.mand .role{font-size:3.02mm;font-weight:700;line-height:1.3}
-.mand .role span{font-weight:400;color:var(--mute)}
-.mand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2mm;flex:1;align-content:stretch}
-.mand-card{
-  background:var(--card);border:.35mm solid var(--line);border-radius:2.6mm;padding:3.2mm 3.6mm;
-  display:flex;flex-direction:column;gap:1.2mm;justify-content:center;
-  border-left:1.2mm solid var(--emerald);
-}
-.mand-card:nth-child(3n+2){border-left-color:var(--pine)}
-.mand-card:nth-child(3n){border-left-color:var(--brass)}
-.mand-card .role{font-size:3.15mm;font-weight:700;line-height:1.28}
-.mand-card .org{font-size:2.85mm;color:var(--mute);line-height:1.3}
 
 /* ============================================================ 10 TECH LANDSCAPE */
 /* five practice clusters as boxless dotted strands */
@@ -566,20 +549,6 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
 .vib .s8-card:nth-child(4) .icbox{background:var(--emerald);color:#fff}
 /* capability pages 9, 11, 12 */
 .vib .cap-strip{background:var(--red2)}
-.vib .mand:nth-child(7n+1) .tick{background:var(--red)}
-.vib .mand:nth-child(7n+2) .tick{background:var(--org)}
-.vib .mand:nth-child(7n+3) .tick{background:var(--azu)}
-.vib .mand:nth-child(7n+4) .tick{background:var(--emerald)}
-.vib .mand:nth-child(7n+5) .tick{background:var(--brass)}
-.vib .mand:nth-child(7n+6) .tick{background:var(--plum)}
-.vib .mand:nth-child(7n) .tick{background:var(--mag)}
-.vib .mand-card:nth-child(7n+1){border-left-color:var(--red)}
-.vib .mand-card:nth-child(7n+2){border-left-color:var(--org)}
-.vib .mand-card:nth-child(7n+3){border-left-color:var(--azu)}
-.vib .mand-card:nth-child(7n+4){border-left-color:var(--emerald)}
-.vib .mand-card:nth-child(7n+5){border-left-color:var(--brass)}
-.vib .mand-card:nth-child(7n+6){border-left-color:var(--plum)}
-.vib .mand-card:nth-child(7n){border-left-color:var(--mag)}
 /* slide 13 */
 .vib .s13-body .sub b{color:var(--redl)}
 .vib .s13-body .rulez{background:var(--redl)}
@@ -1338,20 +1307,24 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
         <span class="chip">SaaS</span><span class="chip">Cloud</span><span class="chip">ERP</span><span class="chip">Laptop manufacturers</span><span class="chip">Fintech</span><span class="chip">Edtech</span><span class="chip">+ many other industries</span>
       </div>
     </div>
-    <div class="mand-grid">
-      <div class="mand-card"><div class="role">Sales Director</div><div class="org">US based engineering multinational conglomerate company</div></div>
-      <div class="mand-card"><div class="role">Chief Revenue Officer</div><div class="org">Fastest growing Media Group in India</div></div>
-      <div class="mand-card"><div class="role">Chief Revenue Officer</div><div class="org">Fastest growing Edtech company in India</div></div>
-      <div class="mand-card"><div class="role">Head of Sales</div><div class="org">Leading Edtech company in India</div></div>
-      <div class="mand-card"><div class="role">VP Sales</div><div class="org">India's largest Real Estate Firm</div></div>
-      <div class="mand-card"><div class="role">Inside Sales Head</div><div class="org">Largest Laptop manufacturer</div></div>
-      <div class="mand-card"><div class="role">Enterprise Sales</div><div class="org">Leading ERP Company in India</div></div>
-      <div class="mand-card"><div class="role">Head Sales and Operations</div><div class="org">Leading Edtech Company in India</div></div>
-      <div class="mand-card"><div class="role">Chief Marketing Officer</div><div class="org">Leading Mobile Company based in China</div></div>
-      <div class="mand-card"><div class="role">Digital Marketing Head</div><div class="org">Leading Mobile Company based in China</div></div>
-      <div class="mand-card"><div class="role">Head of Sales</div><div class="org">Fastest growing Media Group in India</div></div>
-      <div class="mand-card" style="background:var(--red2);border-color:var(--red2);border-left-color:var(--brass)">
-        <div class="role" style="color:#fff">Revenue leadership, delivered</div><div class="org" style="color:var(--brass)">from inside sales to the CRO chair</div>
+    <div class="trk-cols three">
+      <div class="trk">
+        <div class="ti"><span class="no">1</span><div class="role">Sales Director<span class="org">US based engineering multinational conglomerate company</span></div></div>
+        <div class="ti"><span class="no">2</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing Media Group in India</span></div></div>
+        <div class="ti"><span class="no">3</span><div class="role">Chief Revenue Officer<span class="org">Fastest growing Edtech company in India</span></div></div>
+        <div class="ti"><span class="no">4</span><div class="role">Head of Sales<span class="org">Leading Edtech company in India</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">5</span><div class="role">VP Sales<span class="org">India's largest Real Estate Firm</span></div></div>
+        <div class="ti"><span class="no">6</span><div class="role">Inside Sales Head<span class="org">Largest Laptop manufacturer</span></div></div>
+        <div class="ti"><span class="no">7</span><div class="role">Enterprise Sales<span class="org">Leading ERP Company in India</span></div></div>
+        <div class="ti"><span class="no">8</span><div class="role">Head Sales and Operations<span class="org">Leading Edtech Company in India</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">9</span><div class="role">Chief Marketing Officer<span class="org">Leading Mobile Company based in China</span></div></div>
+        <div class="ti"><span class="no">10</span><div class="role">Digital Marketing Head<span class="org">Leading Mobile Company based in China</span></div></div>
+        <div class="ti"><span class="no">11</span><div class="role">Head of Sales<span class="org">Fastest growing Media Group in India</span></div></div>
+        <p class="trk-note">Revenue leadership, delivered —<br><b>from inside sales to the CRO chair.</b></p>
       </div>
     </div>
   </div>
@@ -1386,22 +1359,26 @@ h1.title{font-size:10.5mm;line-height:1.04;font-weight:800;letter-spacing:-.015e
         <span class="chip">F&amp;A</span><span class="chip">FP&amp;A</span><span class="chip">Audit</span><span class="chip">Taxation</span><span class="chip">Risk &amp; Compliance</span><span class="chip">Investor Relations</span>
       </div>
     </div>
-    <div class="mand-grid">
-      <div class="mand-card"><div class="role">Head of Corporate Development &amp; CFO</div><div class="org">Fastest growing Media Group in India</div></div>
-      <div class="mand-card"><div class="role">F&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
-      <div class="mand-card"><div class="role">FP&amp;A Head</div><div class="org">Fortune 500 HR solutions provider company</div></div>
-      <div class="mand-card"><div class="role">Chief Executive Officer</div><div class="org">Leading Mobile Company based in China</div></div>
-      <div class="mand-card"><div class="role">Service Delivery Leader</div><div class="org">Largest Healthcare Provider in the world</div></div>
-      <div class="mand-card"><div class="role">Head of Operations</div><div class="org">Largest Tyre Company in India</div></div>
-      <div class="mand-card"><div class="role">Head of Category</div><div class="org">Largest Tyre Company in India</div></div>
-      <div class="mand-card"><div class="role">Chief Business Officer</div><div class="org">Leading Fintech company in India</div></div>
-      <div class="mand-card"><div class="role">HR Head</div><div class="org">Leading Fintech company based in Singapore</div></div>
-      <div class="mand-card"><div class="role">HR Head</div><div class="org">US based Automatic Transition Company</div></div>
-      <div class="mand-card"><div class="role">Head Procurement</div><div class="org">US based Automatic Transition Company</div></div>
-      <div class="mand-card"><div class="role">Business Head</div><div class="org">Leading Fintech company in India</div></div>
-      <div class="mand-card"><div class="role">Head Risk and Compliance</div><div class="org">Leading Fintech company in India</div></div>
-      <div class="mand-card" style="background:var(--red2);border-color:var(--red2);border-left-color:var(--brass)">
-        <div class="role" style="color:#fff">From the back office to the boardroom</div><div class="org" style="color:var(--brass)">finance, people &amp; operations leadership</div>
+    <div class="trk-cols three">
+      <div class="trk">
+        <div class="ti"><span class="no">1</span><div class="role">Head of Corporate Development &amp; CFO<span class="org">Fastest growing Media Group in India</span></div></div>
+        <div class="ti"><span class="no">2</span><div class="role">F&amp;A Head<span class="org">Fortune 500 HR solutions provider company</span></div></div>
+        <div class="ti"><span class="no">3</span><div class="role">FP&amp;A Head<span class="org">Fortune 500 HR solutions provider company</span></div></div>
+        <div class="ti"><span class="no">4</span><div class="role">Chief Executive Officer<span class="org">Leading Mobile Company based in China</span></div></div>
+        <div class="ti"><span class="no">5</span><div class="role">Service Delivery Leader<span class="org">Largest Healthcare Provider in the world</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">6</span><div class="role">Head of Operations<span class="org">Largest Tyre Company in India</span></div></div>
+        <div class="ti"><span class="no">7</span><div class="role">Head of Category<span class="org">Largest Tyre Company in India</span></div></div>
+        <div class="ti"><span class="no">8</span><div class="role">Chief Business Officer<span class="org">Leading Fintech company in India</span></div></div>
+        <div class="ti"><span class="no">9</span><div class="role">HR Head<span class="org">Leading Fintech company based in Singapore</span></div></div>
+        <div class="ti"><span class="no">10</span><div class="role">HR Head<span class="org">US based Automatic Transition Company</span></div></div>
+      </div>
+      <div class="trk">
+        <div class="ti"><span class="no">11</span><div class="role">Head Procurement<span class="org">US based Automatic Transition Company</span></div></div>
+        <div class="ti"><span class="no">12</span><div class="role">Business Head<span class="org">Leading Fintech company in India</span></div></div>
+        <div class="ti"><span class="no">13</span><div class="role">Head Risk and Compliance<span class="org">Leading Fintech company in India</span></div></div>
+        <p class="trk-note">From the back office to the boardroom —<br><b>finance, people &amp; operations leadership.</b></p>
       </div>
     </div>
   </div>
